@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Comp Bio Lab 2",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nThis is homework 1 and will have some kind of rescript.\nx&lt;-c(1,2,3,4)\ny&lt;-c(3,4,5)\nprint(x)"
+  }
+]
