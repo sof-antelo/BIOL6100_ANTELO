@@ -26,7 +26,7 @@ print(x)
 
 -------
 
-Path to atomic vectors lecture 1-22-26
-
+Path to atomic vectors lecture notes 1-22-26
+https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/atomicvectors.r/
 
 -------
