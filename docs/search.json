@@ -9,8 +9,8 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Comp Bio Lab 2",
+    "title": "Sof Antelo BIOL6100 webpage",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nThis is homework 1 and will have some kind of rescript.\nx&lt;-c(1,2,3,4)\ny&lt;-c(3,4,5)\nprint(x)"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nlink to github repo: https://github.com/sof-antelo/BIOL6100_ANTELO\n\nThis is homework 1 and will have some kind of rescript.\n\nx&lt;-c(1,2,3,4)\n\ny&lt;-c(3,4,5)\n\nprint(x)\n\n[1] 1 2 3 4\n\n\n\nPath to atomic vectors lecture 1-22-26"
   }
 ]
