@@ -24,5 +24,7 @@ y<-c(3,4,5)
 print(x)
 ```
 
+-------
+
 Path to atomic vectors lecture 1-22-26
 https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/atomicvectors.r
