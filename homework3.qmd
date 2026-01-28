@@ -1,0 +1,117 @@
+---
+title: "homework 3, atomic vectors"
+format: html
+---
+
+#-----------------------------------------
+# Sof Antelo's CompBio Lab Homework 3 
+# 1/28/26
+# Atomic Vectors Lab
+#-----------------------------------------
+```{r}
+####PART ONE####
+x = 1.1
+a = 2.2
+b = 3.3
+#assigning values to the variables x, a, and b
+
+#1.a
+z <- x^a^b  #object z assigned the value of x raised to a raised to b
+print (z) #3.61714
+
+#1.b
+z <- (x^a)^b #object z assigned the value of (x raised to a) raised to b
+print(z) #1.997611
+
+#1.c
+z <- (3*x^3) + (2*x^2) + 1 #assigning the equation 3x^3 + 2x^2 + 1 , to z
+print(z) # 7.413
+#---------------------------------------
+```
+
+```{r}
+####PART TWO####
+#2.a
+seq1 <- seq(from = 1, to = 8, length = 8)
+seq2 <- seq(from = 7, to = 1, length = 7)
+#made two sequences, one forward 1-8, one backwards 7-1, then combined them into one vector using c()
+vec1 <- c(seq1, seq2)
+print(vec1) #1 2 3 4 5 6 7 8 7 6 5 4 3 2 1
+
+#2.b
+vec2 <- rep (1:5, 1:5) # makes a vector that goes from 1 to 5 [first 1:5], where the value repeats by the number of its place in vector [second 1:5, first shows 1, second twice, third thrice, etc.]
+print(vec2) #1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+
+#2.c
+vec3 <- rep(5:1, 1:5) #by changing the first one from 1:5 to 5:1 we make 5 our starting number and 1 the end number, without changing the nature of the repition
+print(vec3) #5 4 4 3 3 3 2 2 2 2 1 1 1 1 1
+#-------------------------------------------
+```
+
+```{r}
+####PART THREE####
+
+#random vector of 2 nummbers, used set,seed so it is consistent
+set.seed(100)
+rndm <- runif(2)
+print(rndm) #0.2855648 0.4923079
+
+#pythagoreon theory
+r <- sqrt(rndm[1]^2+rndm[2]^2) 
+print(r) #0.5691346996418604
+theta <- atan(rndm[2]/rndm[1]) 
+print(theta) #1.0451726775319539
+
+#polar coordinates
+polarCoordinates <- c(r, theta) #vector of r, and theta 
+print(polarCoordinates) #0.5691346996418604 1.0451726775319539
+#----------------------------------------
+```
+
+```{r}
+####PART FOUR####
+#noahs ark
+queue <- c("sheep", "fox", "owl", "ant") #animals lined up tp go on noahs ark sheep first, ant last
+print(queue)  #[1] "sheep" "fox"   "owl"   "ant"  
+
+#4.a serpent gets in line
+queue[5] <- "serpent" #added a 5th posistion to queue and assigned it "serpent"
+print(queue) #[1] "sheep"   "fox"     "owl"     "ant"     "serpent"
+
+#4.b sheep enters the arc
+queue <- queue[-1]
+print(queue) #[1] "fox"     "owl"     "ant"     "serpent"
+
+#4.c Donkey uses charm speak to cut the line 
+queue <- c("donkey", queue) #concatenates "donkey" and queue (makes vector with serpent in frist position and then the queue object lists everything else)
+print(queue) #[1] "donkey"  "fox"     "owl"     "ant"     "serpent"
+
+#4.d serpent has places to be
+queue <- queue[-5]
+print(queue) #[1] "donkey" "fox"    "owl"    "ant" 
+
+#4.e owl has adhd and dips 
+queue <- queue[-3]
+print(queue) #[1] "donkey" "fox"    "ant"
+
+# 4.f ant lets aphid cut 
+queue <- append(queue, 'aphid', after=2) # appending queue to put aphid after place 2
+print(queue) #[1] "donkey" "fox"    "aphid"  "ant"   
+
+#4.g what place is aphid in? (without counting)
+which(queue == 'aphid') #[1] 3
+#-------------------------------------------------------------
+```
+
+```{r}
+####PART FIVE####
+
+#create a vector of all of the integers from 1 to 100 that are not divisible by 2, 3, or 7.
+
+vec5 <- seq(1:100) #made the vector
+
+vec5 <- vec5[!(vec5 %%2 == 0 | vec5 %%3 == 0 | vec5 %%7 == 0)] #in order to make sure it was numbers NOT divisible have to put the parameter in () and have ! ahead of that within the [] so the ! will apply to each term separated by | for or
+
+print(vec5) # [1]  1  5 11 13 17 19 23 25 29 31 37 41 43 47 53 55 59 61 65 67 71 73 79 83 85 89 95 97
+```
+
