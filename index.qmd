@@ -26,6 +26,6 @@ print(x)
 
 -------
 
-[homework 3](https://github.com/sof-antelo/BIOL6100_ANTELO/homework3.qmd)
+[homework 3](https://github.com/sof-antelo/BIOL6100_ANTELO/homework3.qmd/)
 -------
 
