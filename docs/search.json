@@ -18,6 +18,6 @@
     "href": "index.html",
     "title": "Sof Antelo BIOL6100 webpage",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nlink to github repo:\n\nThis is homework 1 and will have some kind of rescript.\n\nx&lt;-c(1,2,3,4)\n\ny&lt;-c(3,4,5)\n\nprint(x)\n\n[1] 1 2 3 4\n\n\n\nPath to atomic vectors lecture notes 1-22-26"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nlink to github repo:\n\nThis is homework 1 and will have some kind of rescript.\n\nx&lt;-c(1,2,3,4)\n\ny&lt;-c(3,4,5)\n\nprint(x)\n\n[1] 1 2 3 4\n\n\n\nr scripts and lecture notes\n\n[homework3] ()"
   }
 ]

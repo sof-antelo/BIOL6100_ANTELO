@@ -30,4 +30,3 @@ print(x)
 
 -------
 
-[homework3] ()
