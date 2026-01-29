@@ -18,6 +18,20 @@
     "href": "index.html",
     "title": "Sof Antelo BIOL6100 webpage",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\nlink to github repo:\n\nThis is homework 1 and will have some kind of rescript.\n\nx&lt;-c(1,2,3,4)\n\ny&lt;-c(3,4,5)\n\nprint(x)\n\n[1] 1 2 3 4\n\n\n\nr scripts and lecture notes\n\n[homework3] ()"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\nlink to github repo:"
+  },
+  {
+    "objectID": "index.html#r-scripts-and-lecture-notes",
+    "href": "index.html#r-scripts-and-lecture-notes",
+    "title": "Sof Antelo BIOL6100 webpage",
+    "section": "r scripts and lecture notes",
+    "text": "r scripts and lecture notes\nThis is homework 1 and will have some kind of rescript.\n\nx&lt;-c(1,2,3,4)\n\ny&lt;-c(3,4,5)\n\nprint(x)\n\n[1] 1 2 3 4"
+  },
+  {
+    "objectID": "index.html#homework-3",
+    "href": "index.html#homework-3",
+    "title": "Sof Antelo BIOL6100 webpage",
+    "section": "homework 3",
+    "text": "homework 3"
   }
 ]
