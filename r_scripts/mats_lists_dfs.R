@@ -109,3 +109,105 @@ df3$charV <- char_var
 
 #writing data frames
 write.csv(df3, "data/my_dataframe.csv")
+
+## class 2/3/26
+#distinctions between DFs and Mat Dims 
+
+z_mat <- matrix(data = 1:30, ncol = 3, byrow = T)
+z_dframe <- as.data.frame(z_mat) #coerces matrix into data frame
+
+head(z_mat)
+
+z_dframe$V2 #correct for DF [1]  2  5  8 11 14 17 20 23 26 29
+
+#column ref
+z_dframe[,3]
+z_mat[,3]
+
+#one demension reference 
+z_mat[2] #4
+z_dframe[2] #shows the second vector
+
+#missing data in dfs and mats 
+zd <- runif(10)
+zd
+#add missing by values 
+zd[c(5,7)] <- NA #indexes og vector at 5th and 7th places and puts NA in those spots
+zd
+
+#complete cases
+complete.cases(zd)
+#filter for only true
+zd[complete.cases(zd)]
+
+#which positions are missing
+which(complete.cases(zd)) #[1]  1  2  3  4  6  8  9 10
+
+which(!complete.cases(zd)) #[1] 5 7
+
+#missing data in a matrix 
+m <- matrix(1:20, nrow = 5)
+#add missing data 
+m[1,1] <- NA
+m[5,4] <- NA
+#can do this in one line like this:
+m[c(1,5),c(1,4)] <- NA
+
+m[complete.cases(m),] 
+
+#get complete cases for only certain columns 
+m[complete.cases(m[c(1,2)]),] #drops first row 
+m[complete.cases(m[,c(2,3)]),]#no drops
+m[complete.cases(m[,c(3,4)]),] #drops row 4 (has NAs)
+m[complete.cases(m[,c(1,4)]),] #drops 1&4
+
+#subsetting mats and dfs 
+m <- matrix(data=1:12,nrow=3)
+dimnames(m) <- list(paste("species", LETTERS[1:nrow(m)],sep=""), paste("site",1:ncol(m), sep=""))
+
+print(m) #site1 site2 site3 site4
+          #speciesA     1     4     7    10
+          #speciesB     2     5     8    11
+          #speciesC     3     6     9    12
+
+#element-wise subsetting
+m[1:2, 3:4] #first and second rows in third and fourth columns 
+m[c("speciesA", "speciesB"), c("site3", "site4")] #does the same thing just more readable
+
+m[1:2,] #columns 
+m[,3:4] #rows
+
+# using logical for subsetting
+colSums(m) #sums of each column for that matrix
+colSums(m) > 15
+colSums(m) >= 15
+sums <- colSums(m) #create sums object
+sums[sums > 15]
+
+m[rowSums(m)==22, ]
+
+#we can use character string names 
+m[,"site1"] #gives us all species in row for site 1
+m[,"site1"]<3 #gives us the ones that are less than 3
+
+#data curation
+#first level is having a place where everything is 
+#second level is metadata 
+my_data <- read.table(file="data/testdata.csv",
+            header = TRUE,
+            sep = ",",
+            comment.char="#")
+head(my_data)
+
+#other than csv, we can write out an r object as a rds file 
+#great for huge models that can take a long time, allows it to keep running 
+z_dframe #this is an r object, saving an object as an rds lets us save the whole model so you dont have to run it again 
+
+saveRDS(z_dframe, file = "data/zData.RDS") #.RDS suffix is not needed but its good to put for readablility
+#important to save rds as you go incase anything gets lost
+
+z_dframe
+
+#have to open r 
+unfrozen_Z <- readRDS("data/zData.RDS")
+unfrozen_Z
