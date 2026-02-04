@@ -25,6 +25,8 @@ print(x)
 
 -------
 
-[homework 3](homework3.html)
+[Homework 3](homework3.html)
 -------
 
+[Homework4](homework4.qmd)
+-------
