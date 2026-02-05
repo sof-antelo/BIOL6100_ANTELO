@@ -8,3 +8,7 @@ format: html
 [matrix, lists, data frames](https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/mats_lists_dfs.r/)
 
 ---
+
+[functions](https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/functions.R/)
+
+---
