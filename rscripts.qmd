@@ -9,6 +9,6 @@ format: html
 
 ---
 
-[functions](https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/functions.R/)
+[functions](https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/functions.r/)
 
 ---
