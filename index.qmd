@@ -10,6 +10,7 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 ----
 
 [link to github repo:](https://github.com/sof-antelo/BIOL6100_ANTELO/)
+[link to r scripts] (rscripts.qmd)
 
 ----
 
@@ -28,5 +29,5 @@ print(x)
 [Homework 3](homework3.html)
 -------
 
-[Homework4](homework4.qmd)
+[Homework4](homework4.html)
 -------
