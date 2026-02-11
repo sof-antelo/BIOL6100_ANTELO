@@ -83,3 +83,167 @@ hardy_weinburg <- function(p = runif(1)){
 #END
 
 hardy_weinburg(p = 0.3)
+
+################################################
+#functions 2 2/9/26
+
+sum(3,2) # a "prefix" function
+3 + 2 # an "operator", but it is actually a function
+`+`(3,2) # the operator is an "infix" function
+
+y <- 3
+print(y)
+
+`<-`(yy,3) # another "infix" function
+print(yy)
+
+# to see contents of a function, print it
+print(read.table)
+
+sd # shows the code
+sd(c(3,2)) # call the function with parameters
+# sd() # call function with default values for parameters
+
+
+#anatomy of a function
+functionName <- function(parX=defaultX,parY=defaultY,parZ=defaultZ) { 
+
+# curly bracket open marks the start of the function body
+
+# Body of the function goes here
+# Lines of R code and annotations
+# May also call functions
+# May also create functions
+# May also create local variables
+
+return(z)  # returns from the function a single element (z could be a list)
+
+# curly bracket close marks the end of the function body
+} 
+
+# prints the function body
+functionName 
+
+# calls the function with default values and returns object z
+functionName() 
+
+# calls the function with user-specified values for each paramater
+functionName(parX=myMatrix,parY="Order",parZ=c(0.3,1.6,2,6))
+
+
+#Use multiple return()
+##################################################
+# FUNCTION: hardy_weinberg2
+# input: an allele frequency p (0,1)
+# output: p and the frequencies of the 3 genotypes AA, AB, BB
+#------------------------------------------------- 
+hardy_weinberg2<- function(p=runif(1)) {
+  if (p > 1.0 | p < 0.0) {
+    return("Function failure: p must be >= 0.0 and <= 1.0")
+  }
+  q <- 1 - p
+  fAA <- p^2
+  fAB <- 2*p*q
+  fBB <- q^2
+ vec_out <- signif(c(p=p,AA=fAA,AB=fAB,BB=fBB),digits=3)
+ return(vec_out)
+  }
+##################################################
+  hardy_weinberg2()
+  hardy_weinberg2(1.1) # OK, print error to screen
+  z <- hardy_weinberg2(1.1) # uggh no error printed
+  print(z) # Error message was saved to variable z!
+
+#Use stop 
+##################################################  
+# FUNCTION: hardy_weinberg3
+# input: an allele frequency p (0,1)
+# output: p and the frequencies of the 3 genotypes AA, AB, BB
+#-------------------------------------------------
+hardy_weinberg3<- function(p=runif(1)) {
+  if (p > 1.0 | p < 0.0) {
+    stop("Function failure: p must be >= 0.0 and <= 1.0")
+  }
+  q <- 1 - p
+  fAA <- p^2
+  fAB <- 2*p*q
+  fBB <- q^2
+ vec_out <- signif(c(p=p,AA=fAA,AB=fAB,BB=fBB),digits=3)
+ return(vec_out)
+  }
+##################################################  
+  hardy_weinberg3()
+#  z <- hardy_weinberg3(1.1) 
+
+#Scoping 
+my_func <- function(a=3,b=4) {
+  z <- a + b
+  return(z)
+}
+my_func()
+
+my_funcBad <-function(a=3) {
+  z <- a + b
+  return(z)
+}
+my_func_bad() # crashes because it can't find b
+b <- 100
+my_func_bad() # OK now because b exists as a global variable
+
+# But it is fine to create variables locally
+my_func_ok <- function(a=3) {
+  bb <- 100
+  z <- a + bb
+  return(z)
+}
+
+my_func_ok() # no problems now
+print(bb) # but this variable is still hidden from the global environment
+
+#regression function
+##################################################
+# FUNCTION: fit_linear 
+# fits simple regression line
+# inputs: numeric vector of predictor (x) and response (y)
+# outputs: slope and p-value
+#------------------------------------------------- 
+fit_linear <- function(x=runif(20),y=runif(20)) {
+  my_mod <- lm(y~x) # fit the model
+  my_out <- c(slope=summary(my_mod)$coefficients[2,1],
+             p_value=summary(my_mod)$coefficients[2,4])
+  plot(x=x,y=y) # quick and dirty plot to check output
+  return(my_out)
+}
+##################################################
+fit_linear()
+
+#complex default value 
+##################################################
+# FUNCTION: fit_linear2       
+# fits simple regression line
+# inputs: numeric vector of predictor (x) and response (y)
+# outputs: slope and p-value
+#------------------------------------------------- 
+fit_linear2 <- function(p=NULL) {
+  if(is.null(p)) {
+     p <- list(x=runif(20),y=runif(20))
+  }
+  my_mod <- lm(p$x~p$y) # fit the model
+  my_out <- c(slope=summary(my_mod)$coefficients[2,1],
+             p_value=summary(my_mod)$coefficients[2,4])
+  plot(x=p$x,y=p$y) # quick and dirty plot to check output
+  return(my_out)
+}
+
+##################################################
+fit_linear2()
+my_pars <-list(x=1:10,y=sort(runif(10)))
+fit_linear2(my_pars)
+
+#using do call
+z <- c(runif(99),NA)
+mean(z) # oops, mean doesn't work if there is an NA
+mean(x=z,na.rm=TRUE) # change the default value for na.rm
+mean(x=z,na.rm=TRUE,trim=0.05) # check out the "trim" option in help
+l <- list(x=z,na.rm=TRUE,trim=0.05) # bundle paramaters as a list
+do.call(mean,l) # use the do.call function with the function name and the parameter list
