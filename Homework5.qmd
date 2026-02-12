@@ -36,3 +36,33 @@ my_results <- log_growth_func(N0=3, r=0.5)
 log_growth_func()
 ```
 
+Part 2: Create a second function that takes the above dataframe as its input and creates a plot of population size over time as a side effect.
+
+```{r}
+
+#########################
+#START OF FUNCTION
+
+my_plot <- function(df = my_results){
+
+#########################
+#FUNCTION: my_plot
+#PUPOSE: Plot the population growth using the data frame from part 1
+#INPUTS:my_results
+
+  library(ggplot2) 
+  my_results |>
+      ggplot(aes(x=func_time, y=N_t))+
+    geom_point(color="cornflowerblue")+
+    labs(
+      x = "Time in Years", 
+      y = "Population Size") +
+    
+    theme_minimal()
+#plug the aformentioned LogGrowth data frame into a graph.
+#name the axes.
+#I like the minimal theme :^)
+
+}
+my_plot()
+```
