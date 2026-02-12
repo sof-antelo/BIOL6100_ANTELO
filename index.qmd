@@ -6,15 +6,12 @@ format: html
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
 ----
 
 [link to github repo:](https://github.com/sof-antelo/BIOL6100_ANTELO/)
-
 -----
 
 [link to r scripts](rscripts.html)
-
 ----
 
 This is homework 1 and will have some kind of rescript. 
