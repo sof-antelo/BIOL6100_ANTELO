@@ -61,8 +61,6 @@ my_plot <- function(df = my_results){
     theme_minimal()
 #plug the aformentioned LogGrowth data frame into a graph.
 #name the axes.
-#I like the minimal theme :^)
-
 }
 my_plot()
 ```
