@@ -64,3 +64,14 @@ my_plot <- function(df = my_results){
 }
 my_plot()
 ```
+
+```{r}
+library(knitr)
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>" 
+     html:
+
+    code-fold: true
+```

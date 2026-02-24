@@ -181,6 +181,8 @@ head(growthDF)
 plot(growthDF$r, y = growthDF$N) #kind of like a summary of the model rather than just one run
 ##############
 
+#### 2/17/26
+
 # 1. Initialize vector of 1000 r values from 0 to 1
 r_values <- seq(0, 1, length.out = 1000)
 
