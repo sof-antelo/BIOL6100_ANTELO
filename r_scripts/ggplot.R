@@ -119,7 +119,7 @@ p1 + coord_flip() + theme_grey(base_size=20,base_family="sans")
       caption="Add a caption here") +
    theme_bw(base_size=25,base_family="Monaco")
   #    xlim(0,4) + ylim(0,20)
- print(p2)
+ print(p1)
 
 
  p1 <- ggplot(data=d) +
@@ -145,3 +145,102 @@ p2 <- ggplot(data=d, mapping=aes(x=fl, fill=fl))+
   geom_bar()+
   labs(fill= "Fuel Type", x ="Fuel Type", y= "Count", title= "My Plot")
 p2
+# use coordinate_flip to invert entire plot
+ p2 <- ggplot(data=d, mapping=aes(x=fl,fill=fl)) + geom_bar()
+ print(p2)
+ p2 + coord_flip() + theme_grey(base_size=20,base_family="sans")
+
+
+
+###############
+# multi pannel plot
+library("ggthemes")
+library("patchwork")
+
+g1 <- ggplot(data=d) +
+  aes(x=displ, y=cty)+
+  geom_point()+
+  geom_smooth()
+g1
+
+g2 <- ggplot(data=d)+
+    aes(x = fl)+
+  geom_bar(fill = "tomato", color = "black")
+g2
+
+g3 <- ggplot(data = d)+
+    aes(x=displ)+
+    geom_histogram(fill="royalblue", color="black")
+g3
+
+g4 <- ggplot(data = d) +
+      aes(x = fl, y = cty, fill = fl) +
+      geom_boxplot() +
+    theme(legend.position = "none")
+g4  
+
+#simple two plannel plot
+g1 + g2
+
+#plot three plots 
+g1 + g2 + g3 + plot_layout(ncol = 1) 
+  #plot_layout(ncol = 1) 
+  # means three stacked on top of one another
+
+#changing relative area
+g1 + g2 + plot_layout(ncol = 1, heights =c (2,1)) 
+  #plot_layout(ncol = 1, heights =c (2,1))
+  #made top one bigger than bottom
+
+g1 + g2 + plot_layout(ncol = 2, widths =c(1,2)) 
+  #next to eachother, second one is bigger
+
+#adding spacers
+g1 + plot_spacer() + g2
+  #adds space between them 
+
+# nested layouts 
+g1 + {
+  g2 +{
+    g3 +
+      g4 +
+      plot_layout(ncol = 1)
+  }
+} +
+  plot_layout(ncol=1)
+
+# - operator for subtrack placement
+g1 + g2 - g3 + plot_layout(ncol = 1)
+
+# using | and \ 
+(g1 | g2 | g3) / g4
+
+# add global titles
+(g1 | g2 | g3) / g4 + plot_annotation("Title Here",
+caption = "made this in patchwork")
+
+
+#adding tags 
+g1 / (g2 / g3) +
+  plot_annotation(tag_levels = "A") #capital letters a-z
+
+
+#####################################
+# multi pannel plot with facet
+
+m1 <- ggplot(data = d) +
+  aes(x = displ, y = cty) +
+  geom_point()+
+  geom_smooth(method = "lm")
+m1
+# using facet grid
+m1 + facet_grid(class ~ fl, scales = "free")
+
+#facet on one variable
+m1 + facet_grid(.~class)
+m1 + facet_grid(class~.)
+
+# facet wrap 
+  #doesnt allow more than one variable
+m1 + facet_wrap(~class + fl)
+
