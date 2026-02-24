@@ -80,36 +80,36 @@ ggplot(data = summary_data) +
    geom_line()
 
 #themes and fonts
-p2 <- ggplot(data = d, mapping = aes(x=displ, y = cty))+
+p1 <- ggplot(data = d, mapping = aes(x=displ, y = cty))+
   geom_point()
-p2
+p1
 
-p2 + theme_classic()
+p1 + theme_classic()
 #if there's a lot of things to add, its best to just add it to the object
-p2 + theme_minimal() 
-p2 + theme_linedraw()
-p2 + theme_base() #base r graphics
-p2 + theme_par() #takes parameters and uses those
+p1 + theme_minimal() 
+p1 + theme_linedraw()
+p1 + theme_base() #base r graphics
+p1 + theme_par() #takes parameters and uses those
 
 #changing font and font size
-p2 + theme_classic(base_size = 25, base_family = "serif")
+p1 + theme_classic(base_size = 25, base_family = "serif")
 
 #adding additional fonts
 library(extrafont)
 font_import() #imports all system fonts
 
-p3 + theme_classic(base_size=25,
+p1 + theme_classic(base_size=25,
                   base_family = "")
 
-p3 <- ggplot(data=d, mapping=aes(x=fl, fill=fl))+
+p1 <- ggplot(data=d, mapping=aes(x=fl, fill=fl))+
       geom_bar()
-p3
+p1
 #uses default colors and includes a key
-p3 + coord_flip() + theme_grey(base_size=20,base_family="sans")
+p1 + coord_flip() + theme_grey(base_size=20,base_family="sans")
 
  # use x and/or y limits to clip data set
 
- p2 <- ggplot(data=d) +
+ p1 <- ggplot(data=d) +
   aes(x=displ,y=cty) + 
   geom_point() +
  labs(title="My graph title here",
@@ -122,7 +122,7 @@ p3 + coord_flip() + theme_grey(base_size=20,base_family="sans")
  print(p2)
 
 
- p2 <- ggplot(data=d) +
+ p1 <- ggplot(data=d) +
   aes(x=displ,y=cty) + 
  geom_point(size=4,
             shape=21,
@@ -130,4 +130,18 @@ p3 + coord_flip() + theme_grey(base_size=20,base_family="sans")
    xlim(4,7) + 
    ylim(-10,40) +
    theme_bw(base_size=25,base_family="Monaco")
- print(p2)
+ print(p1)
+
+
+########################
+#2/24/26
+#GGplot Part 2
+########################
+
+#multi panel plots- 
+# simpler way to show complex data
+
+p2 <- ggplot(data=d, mapping=aes(x=fl, fill=fl))+
+  geom_bar()+
+  labs(fill= "Fuel Type", x ="Fuel Type", y= "Count", title= "My Plot")
+p2
