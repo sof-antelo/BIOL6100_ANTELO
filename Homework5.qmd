@@ -52,7 +52,7 @@ my_plot <- function(df = my_results){
 
   library(ggplot2) 
   my_results |>
-      ggplot(aes(x=func_time, y=N_t))+
+      ggplot(aes(x=x, y=y))+
     geom_point(color="cornflowerblue")+
     labs(
       x = "Time in Years", 
@@ -65,13 +65,3 @@ my_plot <- function(df = my_results){
 my_plot()
 ```
 
-```{r}
-library(knitr)
-knitr:
-  opts_chunk: 
-    collapse: true
-    comment: "#>" 
-     html:
-
-    code-fold: true
-```

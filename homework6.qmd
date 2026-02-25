@@ -1,0 +1,15 @@
+-----
+title: "Homework 6"
+format: html
+---
+
+-----------------------------------------
+Sof Antelo's CompBio Lab Homework 6
+2/18/26
+For Loops
+-----------------------------------------
+
+PART 1: Create a function that takes as its inputs, vectors for β (the transmission rate) and γ (the recovery rate). This function will output a dataframe that includes the max number of infected individuals for each parameter combination.
+```{r}
+
+```

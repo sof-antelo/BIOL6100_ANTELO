@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>R Scripts – Comp Bio Webpage Spring 2026</title>
+<title>Homework 5 – Comp Bio Webpage Spring 2026</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -117,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R Scripts</h1>
+<h1 class="title">Homework 5</h1>
 </div>
 
 
@@ -134,9 +169,182 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a href="https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/atomicvectors.r/">atomic vectors</a></p>
-<p><a href="https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/mats_lists_dfs.r/">matrix, lists, data frames</a></p>
-<p><a href="https://github.com/sof-antelo/BIOL6100_ANTELO/r_scripts/functions.r/">functions</a></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sof Antelo’s CompBio Lab Homework 5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2/11/26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Functions</td>
+</tr>
+</tbody>
+</table>
+<p>Part 1: Create a funtion that takes the parameters required to run a logistic growth model and returns a dataframe with columns for population size and time.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">####################</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Start of Function</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>log_growth_func <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">N0 =</span> <span class="dv">1</span>, <span class="at">r =</span> .<span class="dv">1</span>, <span class="at">K =</span> <span class="dv">100</span>, <span class="at">tf =</span> <span class="dv">100</span>, <span class="at">ts =</span> <span class="dv">1</span>) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">#####################</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># FUNCTION: log_growth_func</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># PURPOSE:Logistic growth model for population growth</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># INPUTS: Initial population size (N0), growth rate(r), carrying capacity (K), end time (tf), timestep (ts)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># OUT: dataframe with population size and time</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>func_time <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> tf, <span class="at">by =</span> ts)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>N_t <span class="ot">&lt;-</span> (K<span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>((K<span class="sc">-</span>N0)<span class="sc">/</span>N0)<span class="sc">*</span><span class="fu">exp</span>((<span class="sc">-</span>r)<span class="sc">*</span>func_time)))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>my_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">x=</span>func_time, <span class="at">y=</span>N_t)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(my_df)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="do">#####################</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">#</span><span class="re">END</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>my_results <span class="ot">&lt;-</span> <span class="fu">log_growth_func</span>(<span class="at">N0=</span><span class="dv">3</span>, <span class="at">r=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">log_growth_func</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      x         y
+1     0  1.000000
+2     1  1.104010
+3     2  1.218705
+4     3  1.345153
+5     4  1.484523
+6     5  1.638095
+7     6  1.807261
+8     7  1.993543
+9     8  2.198596
+10    9  2.424219
+11   10  2.672363
+12   11  2.945141
+13   12  3.244833
+14   13  3.573899
+15   14  3.934979
+16   15  4.330901
+17   16  4.764683
+18   17  5.239533
+19   18  5.758846
+20   19  6.326194
+21   20  6.945316
+22   21  7.620101
+23   22  8.354559
+24   23  9.152794
+25   24 10.018958
+26   25 10.957205
+27   26 11.971626
+28   27 13.066181
+29   28 14.244616
+30   29 15.510372
+31   30 16.866479
+32   31 18.315451
+33   32 19.859166
+34   33 21.498748
+35   34 23.234451
+36   35 25.065540
+37   36 26.990200
+38   37 29.005440
+39   38 31.107040
+40   39 33.289511
+41   40 35.546099
+42   41 37.868821
+43   42 40.248541
+44   43 42.675091
+45   44 45.137421
+46   45 47.623795
+47   46 50.122004
+48   47 52.619603
+49   48 55.104162
+50   49 57.563507
+51   50 59.985960
+52   51 62.360550
+53   52 64.677201
+54   53 66.926887
+55   54 69.101742
+56   55 71.195134
+57   56 73.201699
+58   57 75.117338
+59   58 76.939180
+60   59 78.665516
+61   60 80.295715
+62   61 81.830121
+63   62 83.269935
+64   63 84.617104
+65   64 85.874195
+66   65 87.044287
+67   66 88.130851
+68   67 89.137660
+69   68 90.068689
+70   69 90.928041
+71   70 91.719868
+72   71 92.448323
+73   72 93.117500
+74   73 93.731400
+75   74 94.293897
+76   75 94.808715
+77   76 95.279411
+78   77 95.709360
+79   78 96.101751
+80   79 96.459585
+81   80 96.785670
+82   81 97.082631
+83   82 97.352906
+84   83 97.598761
+85   84 97.822293
+86   85 98.025437
+87   86 98.209978
+88   87 98.377558
+89   88 98.529683
+90   89 98.667738
+91   90 98.792990
+92   91 98.906596
+93   92 99.009617
+94   93 99.103019
+95   94 99.187684
+96   95 99.264418
+97   96 99.333951
+98   97 99.396952
+99   98 99.454026
+100  99 99.505726
+101 100 99.552552</code></pre>
+</div>
+</div>
+<p>Part 2: Create a second function that takes the above dataframe as its input and creates a plot of population size over time as a side effect.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">#########################</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#START OF FUNCTION</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>my_plot <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">df =</span> my_results){</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="do">#########################</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#FUNCTION: my_plot</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#PUPOSE: Plot the population growth using the data frame from part 1</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">#INPUTS:my_results</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">library</span>(ggplot2) </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  my_results <span class="sc">|&gt;</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y))<span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"cornflowerblue"</span>)<span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Time in Years"</span>, </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Population Size"</span>) <span class="sc">+</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">#plug the aformentioned LogGrowth data frame into a graph.</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co">#name the axes.</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="fu">my_plot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Homework5_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 
