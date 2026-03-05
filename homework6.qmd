@@ -1,4 +1,4 @@
------
+---
 title: "Homework 6"
 format: html
 ---
@@ -103,6 +103,8 @@ param_sweep <- function(beta_vec, gamma_vec) {
 # PURPOSE: Create a heatmap of max(number of infected) with Transmission Rate, β and Recovery Rate,γ as your x and y axises
 # INPUT: sweep_df : data frame with columns beta, gamma, max_infected
 # OUTPUT: Heatmap
+
+library(ggplot2)
 
 SIR_heatmap<- function(sweep_df) {
 
