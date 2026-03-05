@@ -25,10 +25,13 @@ print(x)
 ```
 
 -------
-
 [Homework 3](homework3.html)
 -------
-
-[Homework4](homework4.html)
+[Homework 4](homework4.html)
 -------
-
+[Homework 5](Homework5.html)
+-------
+[Homework 6](homework6.html)
+-------
+[Homework 7](homework7.html)
+-------
