@@ -78,7 +78,7 @@ starwarsClean%>%
 starwarsClean%>%
   mutate(sp=case_when(species=="Human"~"Human", TRUE~ "Non-human"))%>%
   select(name, sp, everything())
-unqiue(starwarsClean$species)
+unique(starwarsClean$species)
 
 glimpse(starwarsClean)
 
