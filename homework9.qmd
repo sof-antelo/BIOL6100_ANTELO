@@ -1,0 +1,60 @@
+---
+title: "Homework 9"
+format: html
+---
+
+-----------------------------------------
+Sof Antelo's CompBio Lab Homework 9
+3/04/26
+Visualizing Statistical Designs with GGplot
+-----------------------------------------
+I will be using the iris dataset for this homework.
+
+Question 1: Continuous (x), Continuous (y)
+```{r}
+library(tidyverse)
+d <- iris
+fig1 <- ggplot(data = d) +
+    aes(x = Sepal.Length, y = Sepal.Width) +
+    geom_point() +
+    geom_smooth(method = "lm")
+print(fig1)
+```
+
+Question 2: Discrete (x), Continuous (y) 
+```{r}
+fig2 <- ggplot(data = d) +
+  aes(x = Species, y = Petal.Length) +
+  geom_boxplot(fill = "cornflowerblue", color = "black")
+print(fig2)
+```
+
+Question 3: Continuous (x), Discrete (y)
+```{r}
+d2 <- d |>
+    filter(d$Species != "virginica") |>
+    mutate("SpeciesBinary" = Species == "setosa") 
+
+d2$SpeciesBinary <- as.numeric(d2$SpeciesBinary)
+fig3 <- ggplot(data = d2) +
+    aes(x = Sepal.Length , y = SpeciesBinary) +
+    geom_point() +
+    stat_smooth(position = "jitter", method = "glm", method.args = list(family = "binomial"))
+
+print(fig3)
+```
+
+Question 4: Discrete (x), Discrete (y)
+```{r}
+d3 <- d |>
+    mutate(d, newPetal = Petal.Length >= 5)
+treatment <- d3$Species
+outcome <- d3$newPetal
+sum_data <- data.frame(treatment, outcome)
+
+fig4 <- ggplot(data = sum_data) +
+  aes(x = treatment) +
+  geom_bar(aes(fill = as.factor(outcome)))
+
+print(fig4)
+```
