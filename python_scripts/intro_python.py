@@ -354,510 +354,200 @@ np.max(arr2)
 # if statements
 a = 3
 
-# if statements
 if a >= 5:
-  print("a is greater than or equal to 2")
+    print("a is greater than or equal to 5")
 
-
-# else statement
+#better to take multiple situations into account (if else)
 if a >= 5:
-  print("a is greater than or equal to 2")
+    print("a is greater than por equal to 5")
 else:
-  print("a is less than 2")
-  
+    print("a is less than 5")
 
-
-# building a more complicated statement
-
+# more complicated situation:
 a = 3
 b = 3
-operation = "exp"
+operation = "mult"
 
 if operation == "mult":
-  y = a * b
+    y = a * b
 elif operation == "div":
-  y = a/b
+    y = a/b
 elif operation == "add":
-  y = a + b
+    y = a + b
 elif operation == "sub":
-  y = a - b
+    y = a - b
 else:
-  y = "I don't know what that means. I only know four operations!"
-  
-  
-  
+    y = ("I don't know that operation!")
+
 y
-  
-  
-  
-###############################################################################
-# LOOPS
-###############################################################################
-
-# the structure of a for loop:
-
-# for index in someRange:   <-  sets up the index and how many times the loop will go for
-#  out[i] = do a thing.     <-  does the thing for that many times and store it in an obj using the index
 
 
-l = [10,20]
-
-# a simple loop where we print an output
+########################
+# Loops
+########################
 for i in range(2):
-  print(l[i])
+    print(i)
 
+l = [10, 20]
+for i in range(2):
+    print(l[i])
 
-# iterating on the loop directly
-x = ["blue", "red", "green"]
+# loop on an obj. directly 
+x = ["blue", "green", "red"]
 
 for i in x:
-  print(i)
-  
+    print(i)
 
+# more complicated loop
+rnd = random.uniform(low = 1, high = 5, size = 10)
 
-# using the index to iterate
-rnd = random.uniform(low=1, high=5, size = (10))
-
-outList = [] # ermpty list
-
+outList = [] #truly empty list
+rnd
+arr1
 for i in range(len(arr1)):
-  outList.append(rnd[i] + 100)
+    outList.append(rnd[i] + arr1[i])
 
 outList
 
+#nested loop with if else
 
+rnd2D = random.uniform(low = 0, high = 1, size = (3,3))
+rnd2D
 
+matOut = np.empty(shape = (3,3)) #why does empty repopulate with old random values?
+matOut #same shape as what we wanna fill, empty meant it should have place holders
+shp = rnd2D.shape
+shp #(3,3)
 
-# nested loop with if statment 
-rnd2D = random.uniform(low=0, high=1, size = (3,3)) # a random 2d array
-matOut = np.empty(shape = (3, 3)) # empty matrix for storage
-shp = rnd2D.shape # get shape
-
-
+#nested loop
 for i in range(shp[0]):
-  for j in range(shp[1]):
-    
-    if rnd2D[i,j] >= 0.5:
-        matOut[i,j] = rnd2D[i,j] * 1000
-    else:
-       matOut[i,j] = rnd2D[i,j] / 1000
+    for j in range(shp[1]):
+        
+        if rnd2D[i,j] >= 0.5:
+            matOut[i,j] = rnd2D [i,j] * 1000
+        else:
+            matOut[i,j] = rnd2D [i,j] / 1000
+matOut
 
+###################
+# Oandas DFs
+###################
 
-
-#---------++++++++++----------#
-#--------Let's Explore--------#
-#---------++++++++++----------#
-
-# let's take apply this information to look at while loops and break
-
-
-
-
-###############################################################################
-# PANDAS
-###############################################################################
-
-# ------ CREATING A DATA FRAME ------ #
-
-# make a date vec
-dates = pd.date_range("20130101", periods=6)
-
-# create a data frame with 4 numeric columns of length 6 named A, B, C, and, D
-df = pd.DataFrame(np.random.randn(6, 4), index=dates, columns=list("ABCD"))
+dates = pd.date_range("20130101", periods = 6)
+df = pd.DataFrame(np.random.randn(6, 4), index = dates, columns = list("ABCD"))
 df
 
+#df methods
+df.head(4)
+df.tail(4)
+df.index #row names
+df.columns #column names
+df.describe
 
+df.to_numpy() #convert to numpy
 
-# ------ DF INFO ------ #
+#indexing pandas
+df["A"]
+df.loc[:, ["A", "B"]]
+df["20130102": "20130104"]
 
-df.head(4) # top 4 rows
-df.tail(4) # bottom 4 rows
+#read in csv
+ds = pd.read_csv("data/iris.data.csv")
 
-df.index # look at index variables
-df.columns # look at the columns
-df.describe() # summary stats for each row
-
-# convert to numpy array
-df.to_numpy()
-
-
-
-
-# ------ DF INDEXING ------ #
-
-# selecting rows and columns - BY LABELS
-df["A"] # column
-df.loc[:, ["A", "B"]] # columns
-df["20130102":"20130104"] # rows
-
-# slicing on both axises using the date labels
-df.loc["20130102":"20130104", ["A", "B"]]
-
-# selecting rows and columns - BY LOCATION
-df.iloc[3,2] # value at index 3,2
-df.iloc[[1, 2, 4], [0, 2]] # rows 1,2,4 and cols 0 and 2
-df.iloc[1:3, :] # First two rows all cols
-
-
-
-
-# ------ DF MANIPULATION ------ #
-
-# read in data sets
-ds = pd.read_csv("iris.data.csv")
-ds["sepal_length"] # pull sepal width out of data set
-
-ds.head() # examine the data set
-
-# adding a new columns
+ds["sepal_length"]
 ds["sepal_area"] = ds.sepal_length * ds.sepal_width
-ds["petal_area"] = ds["petal_length"] * ds["petal_width"]
+ds.head()
 
-# boolean operations
-ds[ds["sepal_length"] > 7] #  all rows where sepal length is greater than 7
+# fully numeric filter
+df[df > .5]
 
-# fully numeric data frame
-df[df > .5] # values in the data frame greater than 2 - everythin else is nan
+# ---- DF GROUPING AND SUMMARY ---- #
 
+#grouping two variables
+mean_table = ds. groupby("species")[["petal_length", "sepal_length"]].mean()
 
-
-
-
-
-# ------ DF GROUPING AND SUMMARY ------ #           
-
-# mean of petal length and petal width for each species
-mean_table = ds.groupby("species")[["petal_length", "petal_width"]].mean()
-
-# let's make a long form data set and use hhierarchical indexing
-
-# make wide format to long
+#long form ds
 ds_long = pd.melt(ds, id_vars=['species'], value_vars=["sepal_width", "sepal_length", "petal_width", "petal_length"],
            var_name='vars', value_name='vals')
+ds_long
 
-
-# table with two indexes; species and variable
+# group by on long form
 mult_indx = ds_long.groupby(["species", "vars"]).mean()
+mult_indx
 
-
-# pivot tables - another way of grouping
-pd.pivot_table(ds_long, values="vals", index=["vars"], columns=["species"], aggfunc=np.mean)
-pd.pivot_table(ds_long, values="vals", index=["vars"], columns=["species"], aggfunc=np.sum)
-
-
+# pandas pivot tables - another way of grouping
+pd.pivot_table(ds_long, values = "vals", index = ["vars"], columns = ["species"], aggfunc = np.mean)
+pd.pivot_table(ds_long, values = "vals", index = ["vars"], columns=["species"], aggfunc=np.sum)
 # stacking:
-mean_table # original table
-mean_table.stack() # stacked table
-
+mean_table
 # stacking:
-mult_indx # original table
-mult_indx.unstack() # unstacked table
+mult_indx
 
 
 
-
-
-
-###############################################################################
-# FUNCTIONS
-###############################################################################
-
-# ------ The structure of a user-defined function ------ #
+#########################################################
+#Functions
+#########################################################
+# ---------- Strcture of a user defined function ---------- #
 #
 # - function name
 # - inputs / arguments
 # - operations 
 # - output
-#
-
-
-# defining a basic function
-def number_adder(a, b): # name and inputs
-    out = a + b # operation
-    return(out) # outputs
-
-added = number_adder(a = -3, b = 3)
-
-# calling the function without inputs
-number_adder(a = 1, b = 1)
-
-
-
-
-# ------ Defaults and added complexity ------ #
-
-# adding defaults and an if else statement 
-def number_adder(a = None, b = None): # add defaults to the arguments
-  
-  if a == None or b == None: # does a or b have an input?
-    out = "Please provide numeric inputs for a and b!" # no it doesn't
-  else:
-    out = a + b # yes it does
-  return(out) 
-
-
-number_adder() # calling the function without inputs
-number_adder(a = 2, b = 3) # providing inputs
-
-
-# it just adds things? How about adding other operators
-
-def math_doer(a = None, b = None, operation = "add"): # add another argument
-  
-  if a == None or b == None: # does a or b have an input?
-    out = "Please provide numeric inputs for a and b!" # no it doesn't
-  else:
-    
-    if operation == "add":
-      out = a + b 
-    if operation == "sub":
-      out = a - b 
-    if operation == "mult":
-      out = a * b 
-    if operation == "div":
-      out = a / b 
-
-  return(out) 
-
-# lets explore the results
-math_doer(a = 1, b = 4, operation = "mult")
-
-
-
-# ------ The return statement ------ #
-
-# multiple outputs
-def random_array(length1 = 1, length2 = 1):
-  
-  out1 = np.random.random(length1)
-  out2 = np.random.random(length2)
-  
-  return(out1, out2)
-
-
-
-# single or multiple objects on the function call
-x, y = random_array(length1 = 2, length2 = 4)
-
-
-
-#---------++++++++++----------#
-#--------Let's Explore--------#
-#---------++++++++++----------#
-
-# let's build a function that takes an array and returns a either the min or the max
-
-
-
-
-
-
-###############################################################################
-# DATA ANALYSIS - statsmodels 
-###############################################################################
-# https://www.statsmodels.org/devel/stats.html#module-statsmodels.sandbox.stats.runs
-
-
-# read in data sets
-#ds = pd.read_csv("/Users/pburnham/Desktop/iris.data.csv")
-
-
-# ------ linear regression ------ #
-
-# here is our model
-results = smf.ols('sepal_length ~ petal_width + petal_length + sepal_width', data=ds).fit()
-
-results.summary() # check the results
-
-
-# plot a 4 panel scatter plot for the four variables
-fig, axs = plt.subplots(2, 2)
-axs[0, 0].plot(ds["sepal_length"], ds["petal_length"], 'o')
-axs[0, 0].set(ylabel='petal length')
-axs[0, 1].plot(ds["sepal_width"], ds["petal_length"], 'o', color = "orange")
-axs[1, 0].plot(ds["sepal_width"], ds["petal_width"], 'o', color = "green")
-axs[1, 0].set(xlabel='sepal width', ylabel='petal width')
-axs[1, 1].plot(ds["sepal_length"], ds["petal_width"], 'o', color = "red")
-axs[1, 1].set(xlabel='sepal length')
-
-plt.show()
-
-
-
-
-# ------ ANOVA ------ #
-
-# our ANOVA model
-anova_mod = smf.ols('petal_width ~ species', data=ds).fit()
-
-anova_mod.summary() # check results
-
-sm.stats.anova_lm(anova_mod, typ=2) # get ANOVA table
-
-
-
-# plotting a boxplot using matplot lib
-
-# create arrays by sepcies
-setosa = ds[ds['species'] == "setosa"]["petal_width"] 
-versicolor = ds[ds['species'] == "versicolor"]["petal_width"] 
-virginica = ds[ds['species'] == "virginica"]["petal_width"] 
-
-# list of arrays
-data_plotting = [setosa, versicolor, virginica]
-
-# creating plot
-plt.clf()
-plt.boxplot(data_plotting, labels = ["setosa", "versicolor", "virginica"])
-plt.xlabel('Petal Width', fontsize=17)
-plt.ylabel('Iris Species', fontsize=17)
-plt.show()
-
-
-
-
-# ------ POST HOC ------ #
-
-# lets use statsmodels to run a post hoc test
-from statsmodels.stats.multicomp import pairwise_tukeyhsd
-
-# run the tukeyHSD
-tukey_results = pairwise_tukeyhsd(endog=ds['petal_width'],
-                          groups=ds['species'],
-                          alpha=0.05)
-print(tukey_results)
-
-
-
-
-###############################################################################
-# SCIPY - SIR models - using odeint
-###############################################################################
-from scipy.integrate import odeint
-
-
-# input params annd run model
-def run_SIR(N = 1000, I0 = 1, R0 = 0, beta = .2, gamma = .1, time = 150):
-
-  # initial suceptible
-  S0 = N - I0 - R0
-
-  # time vec
-  t = np.linspace(0, time, time)
-
-  # The SIR model
-  def deriv(y, t, N, beta, gamma):
-      S, I, R = y
-      dSdt = -beta * S * I / N
-      dIdt = beta * S * I / N - gamma * I
-      dRdt = gamma * I
-      return dSdt, dIdt, dRdt
-
-  # Initial conditions vector
-  y0 = S0, I0, R0
-
-  # Integrate the SIR equations over the time grid, t.
-  ret = odeint(deriv, y0, t, args=(N, beta, gamma))
-  S, I, R = ret.T
-  
-  return S, I, R, t, N
-
-
-# plot results
-def SIR_plotter(susceptible, infected, recovered, number, time):
-
-  # Plot the data on three separate curves for S(t), I(t) and R(t)
-  fig = plt.figure(facecolor='w')
-  ax = fig.add_subplot(111, facecolor='w', axisbelow=True)
-  ax.plot(time, susceptible/number, 'b', alpha=0.5, lw=4, label='Susceptible')
-  ax.plot(time, infected/number, 'r', alpha=0.5, lw=4, label='Infected')
-  ax.plot(time, recovered/number, 'g', alpha=0.5, lw=4, label='Recovered')
-  ax.set_xlabel('Time /days')
-  ax.set_ylabel('Proportion')
-  legend = ax.legend()
-
-  plt.show()
-
-
-
-# run these functions
-S, I, R, t, N = run_SIR(I0 = 1, R0 = 0, beta = .6, gamma = .3, time = 150, N = 1000) # run models
-SIR_plotter(susceptible = S, infected = I, recovered = R, time = t, number = N) # plot results
-
-
-# let's explore the parameter space of beta and gamma
-# how granular is the param sweep?
-fidelity = 100 
-
-beta = np.linspace(0, 1, num=fidelity) # 100 beta values
-gamma = np.linspace(1, 0, num=fidelity) # 100 gamma values
-
-
-
-# initialize a storage array
-storage = np.empty((fidelity, fidelity))
-
-# let's loop through for each pair-wise combo
-for b in range(len(beta)):
-  for g in range(len(gamma)):
-    
-    S, I, R, t, N = run_SIR(I0 = 1, R0 = 0, beta = beta[b], gamma = gamma[g], time = 150, N = 1000) # run models
-    I_max = np.nanmax(I)
-    storage[g, b] = I_max/N
-
-
-# plot the values for beta and gamma
-plt.clf()
-plt.imshow(storage, extent=[0, 1, 0, 1])
-plt.xlabel('beta', fontsize=20)
-plt.ylabel('gamma', fontsize=20)
-plt.colorbar(fraction=0.046, pad=0.04)
-plt.title("Proportion of infected by beta and gamma", fontsize=15)
-plt.show()
-
-
-
-
-
-###############################################################################
-# GRAPHICS - seabourne 
-###############################################################################
-
-# tutorial 
-# https://seaborn.pydata.org/tutorial/introduction.html#a-high-level-api-for-statistical-graphics
-
-# palettes
-# https://seaborn.pydata.org/tutorial/color_palettes.html
-
-# library
+#########################################################
+#START OF FUNCTION
+def number_adder(a, b):
+    #PURPOSE: add two nums and return the sum
+    #params: a = numeric, b = numeric
+    #output: numeric sum of a and b 
+    out = a + b 
+    return(out)
+###########################################################
+#END OF FUNCTION
+
+#return number adde
+number_adder(a = 3, b = 6)
+
+#more complex one
+#########################################################
+#START OF FUNCTION
+def number_adder_two(a = None, b = None):
+    #PURPOSE: add two nums and return the sum
+    #params: a = numeric, b = numeric
+    #output: numeric sum of a and b 
+    if a == None or b == None:
+        out = "please provide inputs for a and b of type numeric"
+    else:
+        out = a + b     
+    return(out)
+###########################################################
+#END OF FUNCTION
+number_adder_two(a = 6, b = 4)
+number_adder_two(a = None, b = 4)
+
+
+#GRAPHICS - seaborn
+#start by going to the terminal 
+    #in base: use conda install seaborn
+
+#import seaborn
 import seaborn as sns
 
-# set theme
-sns.set_theme(style = "ticks", font_scale = 1.5) # styles: "darkgrid" "whitegrid" "dark" "white" "ticks"
+#styles: darkgrid, whitegrid, dark, white, ticks
+sns.set_theme(style = "ticks", font_scale = 1.5) #good to keep figures consistent
 
+#scatter plot
 
-
-
-# ------ SCATTER PLOTS ------ #
-
-
-# Species as column
+#species as column
 sns.relplot(
       data=ds,
       x="sepal_width", y="petal_length",
       col="species")
-plt.show()
-
-
-
 # Species as style and color
 sns.relplot(
       data=ds,
       x="sepal_width", y="petal_length",
       style="species", hue="species")
-plt.show()
-
-
 
 # Species as color - adding some features
 f = sns.relplot(
@@ -868,63 +558,29 @@ f = sns.relplot(
 f.set_axis_labels("Sepal Width", "Petal Length", labelpad=10)
 f.legend.set_title("Species")
 f.ax.margins(.15)
-plt.show()
 
+sns.set_theme(style = "white", font_scale = 1.5) #remove ticks
 
-
-
-# lets move the legend
-sns.set_theme(style = "white", font_scale = 1.5)
-
-# Species as color - adding some features
-f = sns.relplot(
-      data=ds,
-      x="sepal_width", y="petal_length",
-      hue="species", palette="bright")
-      
-f.set_axis_labels("Sepal Width", "Petal Length", labelpad=10)
-
-# 'upper right', 'upper left', 'lower left', 'lower right', 'right', 'center left', 'center right', 'lower center', 'upper center', 'center'
+#move the legend, so it doesnt take up too much white space 
 sns.move_legend(
-    f, "upper center",
-    bbox_to_anchor=(.5, 1), ncol=3, title=None, frameon=False,
+    f , "upper cener",
 )
 
-plt.show()
-
-
-
-# ------ LINEAR FITS ------ #
-
-
+#adding a lineary model
 f = sns.lmplot(
-      data=ds,
-      x="sepal_width", y="petal_length",
-      hue="species", palette="bright")
-      
-f.set_axis_labels("Sepal Width", "Petal Length", labelpad=10)
-
-plt.show()
-
-
-
-
-
-
-# ------ A 4 PANEL HISTOGRAM ------ #
-
-f = sns.displot(
-    ds_long,
-    x="vals", hue="species",
-    col="vars", col_wrap=2, height=3,
-    kde=True,
+    data = ds,
+    x = "sepal_length", y = "petal_length",
+    hue = "species", palette = "bright"
 )
-plt.show()
 
+#four panel histogram
+#col_wrap = 2, makes 2 by 2 grid
+f = sns.displot(
+    data = ds_long,
+    x = "vals", hue = "species",
+    col = "vars", col_wrap = 2, height = 3, 
+    kde = True,
+)
 
-
-
-# ------ A BAR PLOT ------ #
-
-sns.catplot(data=ds_long, kind="bar", x="species", y="vals", hue="vars")
-plt.show()
+#Bar plot
+sns.catplot(data = ds_long, kind = "bar", x = "species", y = "vals", hue = "vars")
