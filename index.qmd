@@ -11,9 +11,6 @@ To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 [link to github repo:](https://github.com/sof-antelo/BIOL6100_ANTELO/)
 -----
 
-[link to r scripts](rscripts.html)
-----
-
 This is homework 1 and will have some kind of rescript. 
 
 ```{r}
@@ -35,3 +32,10 @@ print(x)
 -------
 [Homework 7](homework7.html)
 -------
+[Homework 8](homework8.html)
+-------
+[Homework 9](homework9.html)
+-------
+[Homework 10](homework10.html)
+-------
+
