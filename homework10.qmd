@@ -8,8 +8,37 @@ Sof Antelo's CompBio Lab Homework 10
 3/26/26
 Python Data Structures
 -----------------------------------------
+
 PART 1: Create a list of any length that contains a mix of numeric, character strings, boolean variables, and at least one other list.
 
+```{python}
+import numpy as np
+import pandas as pd
+
+#make list
+myList = ["Ants",7,[8,9,10,11,12], 6,9,7, False] 
+
+#indexing and printing 
+Third_element = myList[2] 
+print("Third_element is", Third_element)
+listWithinlist = myList[2][1]
+print("Second element of inner list is", listWithinlist)
+
+
+
+
+```
+
 PART 2: Create a dictionary that contains at least 5 keys and 5 values.
+```{python}
+
+
+
+```
+
 
 PART 3: Create a numpy array of length 100 with values bound between 0 and 1 and save as arr1.
+```{python}
+
+
+```
