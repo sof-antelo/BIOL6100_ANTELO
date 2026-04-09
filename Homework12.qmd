@@ -1,0 +1,47 @@
+---
+title: "Homework 12"
+format: html
+---
+
+-----------------------------------------
+Sof Antelo's CompBio Lab Homework 12
+4/8/26
+Mapping with Plotly
+-----------------------------------------
+
+PART 1: Choropleth map of GDP in Europe
+```{python}
+from bokeh.palettes import viridis
+import json 
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+#loading data, filtering for Europe and a specific year, I am using 2002
+gap = px.data.gapminder().query("continent=='Europe' and year == 2002")
+gap.head()
+
+#making choropleth map
+fig = px.choropleth(
+     gap,
+    locations = "iso_alpha",
+    color = "gdpPercap",
+    hover_name = "country",
+    hover_data = {
+        "pop": ":,",
+        "gdpPercap": ":,.2f",
+        "iso_alpha": False
+    },
+    color_continuous_scale="viridis",
+    title = "GDP per cap. by country (2002)",
+    labels = {"country":"Country", "pop":"Population","gdpPercap":"GDP per Capita"}
+)
+#cropping the figure 
+fig.update_geos(
+    scope = "europe",
+    showland = True
+)
+
+
+fig.show()
+```
