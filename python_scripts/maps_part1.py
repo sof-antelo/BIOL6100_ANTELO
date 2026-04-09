@@ -122,3 +122,91 @@ fig.show()
 # dark theme 
 fig.update_layout(map_style="carto-darkmatter")
 fig.show()
+
+
+# 4/9/26
+#Density heat maps
+eq = pd.read_csv(
+    "https://raw.githubusercontent.com/plotly/datasets/master/earthquakes-23k.csv"
+)
+eq.head()
+
+fig = px.density_map(
+    eq,
+    lat = "Latitude", 
+    lon = "Longitude",
+    z = "Magnitude", #Z is the variable we are actually looking for
+    radius = 10,
+    zoom = 0,
+    center = {"lat": 0, "lon": 180},
+    map_style = "open-street-map", 
+    title = "Global Earthquake Density"
+)
+
+fig.show()
+
+fig = px.density_map(
+    eq,
+    lat = "Latitude", 
+    lon = "Longitude",
+    z = "Magnitude", #Z is the variable we are actually looking for
+    radius = 10, #setting higer radius gives more fidelity
+    zoom = 0,
+    center = {"lat": 0, "lon": 180},
+    map_style = "open-street-map", 
+    title = "Global Earthquake Density"
+)
+fig.update_traces(opacity = 0.5)
+
+#focus on region 
+pacific = eq.query("Latitude > -60 and Latitude < 60 and Longitude > 100")
+
+fig = px.density_map(
+    pacific,
+    lat = "Latitude", 
+    lon = "Longitude",
+    z = "Magnitude", #Z is the variable we are actually looking for
+    radius = 10, #setting higer radius gives more fidelity
+    zoom = 0,
+    center = {"lat": 0, "lon": 180},
+    map_style = "carto-darkmatter", 
+    title = "Global Earthquake Density"
+)
+fig.show()
+fig.update_traces(opacity = 0.5)
+
+#bubble map 
+gap
+fig = px.scatter_geo(
+    gap,
+    locations = "iso_alpha",
+    color = "continent",
+    hover_name = "country",
+    size = "pop",
+    projection = "natural earth"
+)
+fig.show()
+
+df = px.data.gapminder()
+
+fig = px.scatter_geo(
+    df,
+    locations = "iso_alpha",
+    color = "continent",
+    hover_name = "country",
+    size = "pop",
+    animation_frame = "year",
+    projection = "natural earth"
+)
+fig.show()
+
+from dash import Dash, dcc, html
+#keeps current fig
+
+app = Dash() #initiating an app
+#specifically making an html web app
+app.layout = html.Div([
+    dcc.Graph(figure=fig)
+    ]) 
+#not using a server, just doing it locally
+app.run(debug = True, use_reloader = False)
