@@ -1,0 +1,67 @@
+---
+title: "Homework 5"
+format: html
+---
+
+-----------------------------------------
+Sof Antelo's CompBio Lab Homework 5
+2/11/26
+Functions 
+-----------------------------------------
+
+Part 1: Create a funtion that takes the parameters required to run a logistic growth model and returns a dataframe with columns for population size and time.
+```{r}
+####################
+#Start of Function
+
+log_growth_func <- function(N0 = 1, r = .1, K = 100, tf = 100, ts = 1) {
+#####################
+# FUNCTION: log_growth_func
+# PURPOSE:Logistic growth model for population growth
+# INPUTS: Initial population size (N0), growth rate(r), carrying capacity (K), end time (tf), timestep (ts)
+# OUT: dataframe with population size and time
+
+func_time <- seq(from = 0, to = tf, by = ts)
+N_t <- (K/(1+((K-N0)/N0)*exp((-r)*func_time)))
+
+my_df <- data.frame(x=func_time, y=N_t)
+
+return(my_df)
+}
+#####################
+#END
+
+my_results <- log_growth_func(N0=3, r=0.5)
+
+log_growth_func()
+```
+
+Part 2: Create a second function that takes the above dataframe as its input and creates a plot of population size over time as a side effect.
+
+```{r}
+
+#########################
+#START OF FUNCTION
+
+my_plot <- function(df = my_results){
+
+#########################
+#FUNCTION: my_plot
+#PUPOSE: Plot the population growth using the data frame from part 1
+#INPUTS:my_results
+
+  library(ggplot2) 
+  my_results |>
+      ggplot(aes(x=x, y=y))+
+    geom_point(color="cornflowerblue")+
+    labs(
+      x = "Time in Years", 
+      y = "Population Size") +
+    
+    theme_minimal()
+#plug the aformentioned LogGrowth data frame into a graph.
+#name the axes.
+}
+my_plot()
+```
+
