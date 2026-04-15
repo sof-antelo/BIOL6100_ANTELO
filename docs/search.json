@@ -67,7 +67,7 @@
     "href": "index.html#link-to-github-repo",
     "title": "Sof Antelo BIOL6100 webpage",
     "section": "link to github repo:",
-    "text": "link to github repo:"
+    "text": "link to github repo:\nThis is homework 1 and will have some kind of rescript.\n\nx&lt;-c(1,2,3,4)\n\ny&lt;-c(3,4,5)\n\nprint(x)\n\n[1] 1 2 3 4\n\n\n\n\n\nHomework 3\n\n\n\n\nHomework 4"
   },
   {
     "objectID": "index.html#link-to-r-scripts",
@@ -144,7 +144,7 @@
     "href": "index.html#homework-10",
     "title": "Sof Antelo BIOL6100 webpage",
     "section": "Homework 10",
-    "text": "Homework 10"
+    "text": "Homework 10\nlink to homework 11 repo:"
   },
   {
     "objectID": "homework8.html",

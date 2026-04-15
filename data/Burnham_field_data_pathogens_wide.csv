@@ -1,0 +1,299 @@
+id,sampling_date,site_code,field_id,bombus_spp,host_plant,bee_caste,sampling_event,BQCV_pathogen_binary,DWV_pathogen_binary,Nosema_pathogen_binary,BQCV_pathogen_load,DWV_pathogen_load,Nosema_pathogen_load
+1,9/9/20,BOST,6,impatiens,solidago,worker,4,1,1,NA,2414168.805,85329.54142,NA
+3,9/10/20,MUDGE,18,impatiens,crown vetch,worker,4,1,1,0,760793.2324,45153.02837,0
+4,9/10/20,MUDGE,11,impatiens,crown vetch,worker,4,0,0,1,0,0,225000
+5,9/9/20,BOST,11,impatiens,solidago,male,4,0,0,NA,0,0,NA
+6,9/10/20,CIND,14,impatiens,knot weed,worker,4,1,1,0,124236.7921,215750.2847,0
+8,9/10/20,MUDGE,4,impatiens,crown vetch,worker,4,1,1,NA,413814.5638,27694.50213,NA
+10,9/10/20,CIND,13,impatiens,red clover,worker,4,1,1,0,1028831.605,44988.08297,0
+11,7/7/20,BOST,38,impatiens,red clover,worker,2,1,0,0,307696378.8,0,0
+12,9/10/20,MUDGE,5,impatiens,crown vetch,worker,4,0,0,0,0,0,0
+13,9/9/20,BOST,12,impatiens,solidago,male,4,1,0,0,311873.0526,0,0
+15,9/9/20,BOST,18,impatiens,solidago,worker,4,0,0,1,0,0,50000
+16,9/9/20,BOST,23,impatiens,solidago,male,4,1,0,0,1674951.391,0,0
+17,9/10/20,CIND,20,impatiens,red clover,worker,4,1,0,0,3214026.976,0,0
+18,9/10/20,CIND,11,impatiens,birdsfoot,worker,4,1,0,0,995592.63,0,0
+19,9/10/20,CIND,17,impatiens,red clover,worker,4,0,0,0,0,0,0
+20,9/10/20,CIND,16,impatiens,red clover,worker,4,1,1,0,200804.8542,46865.1454,0
+21,9/9/20,BOST,17,impatiens,solidago,worker,4,1,0,0,228085.8104,0,0
+22,9/9/20,BOST,7,impatiens,solidago,worker,4,1,0,0,7261151.315,0,0
+23,7/7/20,COL,22,impatiens,red clover,worker,2,1,1,0,817906.8276,38650.78998,0
+24,7/7/20,BOST,45,impatiens,red clover,worker,2,1,0,0,858658.6884,0,0
+25,7/7/20,BOST,46,impatiens,red clover,worker,2,1,0,0,1390213.258,0,0
+26,9/10/20,CIND,19,impatiens,knot weed,worker,4,NA,1,0,NA,42594.79507,0
+27,9/9/20,BOST,16,impatiens,solidago,worker,4,1,0,0,3847308.58,0,0
+28,9/9/20,BOST,10,impatiens,solidago,male,4,1,0,0,21802654.79,0,0
+29,9/9/20,BOST,20,impatiens,solidago,worker,4,1,1,0,4026207.454,188818.8759,0
+30,9/10/20,MUDGE,16,impatiens,crown vetch,worker,4,0,1,0,0,1322198.956,0
+31,9/10/20,MUDGE,2,impatiens,crown vetch,worker,4,1,0,0,3185000.456,0,0
+32,9/9/20,BOST,19,impatiens,solidago,worker,4,1,0,0,3473347.836,0,0
+33,9/9/20,BOST,5,impatiens,solidago,worker,4,0,1,0,0,41186.674,0
+34,7/7/20,BOST,21,bimaculatus ,red clover,worker,2,1,1,NA,5094918.618,31693.73363,NA
+35,9/10/20,MUDGE,3,impatiens,crown vetch,worker,4,1,1,0,6633152.272,18851.8983,0
+36,9/10/20,CIND,5,impatiens,red clover,worker,4,1,0,0,1234024.118,0,0
+37,9/9/20,BOST,24,impatiens,solidago,male,4,1,0,0,7027623.46,0,0
+38,9/10/20,MUDGE,15,impatiens,crown vetch,worker,4,1,1,0,1762561.063,40167.96608,0
+39,7/7/20,BOST,44,impatiens,red clover,worker,2,1,1,1,10269604.05,187511.0816,50000
+40,9/10/20,MUDGE,9,impatiens,solidago,worker,4,1,0,1,65701945.97,0,25000
+41,9/10/20,MUDGE,8,impatiens,solidago,worker,4,1,0,0,37212133.71,0,0
+42,9/9/20,BOST,29,vagans,solidago,male,4,0,0,0,0,0,0
+43,9/9/20,BOST,27,impatiens,solidago,male,4,1,0,1,1624012.205,0,25000
+44,9/10/20,MUDGE,15,impatiens,crown vetch,worker,4,1,0,0,3783885.421,0,0
+45,9/10/20,CIND,6,impatiens,red clover,worker,4,1,0,1,32725315.21,0,75000
+46,9/10/20,MUDGE,19,impatiens,crown vetch,worker,4,1,0,0,7269982.917,0,0
+47,9/10/20,MUDGE,10,impatiens,yellow flower need to ID,worker,4,NA,NA,NA,NA,NA,NA
+47,9/10/20,MUDGE,10,impatiens,NA,worker,4,NA,0,0,NA,0,0
+48,9/9/20,BOST,25,impatiens,solidago,male,4,0,0,0,0,0,0
+49,9/10/20,MUDGE,6,impatiens,crown vetch,worker,4,1,0,1,3432824.36,0,1.00E+05
+50,9/10/20,MUDGE,14,impatiens,crown vetch,worker,4,0,0,1,0,0,2075000
+51,9/9/20,BOST,28,impatiens,solidago,male,4,1,1,1,68403282513,4063133.786,25000
+52,9/9/20,BOST,3,impatiens,solidago,worker,4,1,1,0,357451.842,885190.483,0
+53,9/9/20,BOST,26,impatiens,solidago,male,4,1,1,0,300145.2793,706340.965,0
+54,7/6/20,COL,8,impatiens,red clover,worker,2,1,0,0,474680.8072,0,0
+55,9/10/20,CIND,3,impatiens,red clover,worker,4,1,0,0,437668.8834,0,0
+56,9/9/20,BOST,9,impatiens,solidago,male,4,1,0,0,2636602.746,0,0
+57,9/10/20,MUDGE,13,impatiens,crown vetch,worker,4,0,0,0,0,0,0
+58,9/10/20,CIND,4,impatiens,red clover,worker,4,1,1,0,1814390.225,351213.648,0
+59,9/9/20,BOST,4,impatiens,solidago,worker,4,1,1,0,2439802.105,700860.781,0
+60,9/9/20,BOST,14,impatiens,solidago,male,4,1,1,0,662491.9458,419316.2664,0
+61,7/7/20,COL,21,impatiens,red clover,worker,2,NA,1,0,NA,144951.3914,0
+62,9/10/20,CIND,15,impatiens,red clover,worker,4,1,1,NA,232765.7305,126962.3309,NA
+63,7/7/20,BOST,42,impatiens,red clover,worker,2,1,0,0,56448.21361,0,0
+64,9/9/20,BOST,22,impatiens,solidago,male,4,1,0,1,2098794.506,0,50000
+65,9/9/20,BOST,13,impatiens,solidago,male,4,1,1,1,1893760.92,124902.5636,1550000
+66,9/9/20,BOST,1,impatiens,solidago,worker,4,1,0,1,38104803.29,0,25000
+67,9/10/20,MUDGE,17,impatiens,crown vetch,worker,4,1,0,NA,26960547.94,0,NA
+68,7/6/20,COL,11,impatiens,red clover,worker,2,1,1,1,3412470.299,35694.63724,75000
+69,7/6/20,COL,9,impatiens,red clover,worker,2,1,0,0,17385564.6,0,0
+70,9/9/20,BOST,15,impatiens,solidago,male,4,1,0,0,3196258.556,0,0
+71,9/9/20,BOST,8,impatiens,solidago,male,4,1,0,NA,7567444.996,0,NA
+72,9/10/20,CIND,12,impatiens,red clover,worker,4,1,0,0,47458651.64,0,0
+74,9/10/20,MUDGE,7,impatiens,solidago,worker,4,1,0,0,957412.1103,0,0
+75,9/9/20,FLAN,31,impatiens,jewel weed,worker,4,0,1,0,0,120464.6868,0
+76,9/9/20,FLAN,7,impatiens,jewel weed,worker,4,1,0,NA,319769949.3,0,NA
+77,9/10/20,COL,47,impatiens,red clover,worker,4,1,0,0,4649809.637,0,0
+78,9/9/20,FLAN,24,impatiens,jewel weed,worker,4,1,1,0,8469089.989,42447.47228,0
+79,8/4/20,CIND,13,impatiens,red clover,worker,3,1,0,0,1277499.024,0,0
+80,8/4/20,CIND,2,impatiens,red clover,worker,3,1,0,0,19579679.97,0,0
+81,9/9/20,FLAN,30,impatiens,jewel weed,worker,4,1,0,0,84951961,0,0
+82,8/4/20,CIND,21,impatiens,red clover,worker,3,NA,0,0,NA,0,0
+83,9/10/20,COL,44,impatiens,red clover,worker,4,1,1,0,220529.8317,50101.06941,0
+84,8/4/20,MUDGE,4,impatiens,crown vetch,worker,3,1,1,0,160033.7979,100413.9397,0
+85,8/4/20,MUDGE,30,impatiens,crown vetch,worker,3,1,0,NA,6257120.838,0,NA
+86,9/10/20,COL,29,impatiens,red clover,worker,4,1,1,1,146487.4117,43112.50143,50000
+87,8/4/20,MUDGE,33,impatiens,saint johns wort,worker,3,0,0,0,0,0,0
+88,8/4/20,MUDGE,23,impatiens,crown vetch,worker,3,NA,1,NA,NA,87695.74884,NA
+89,8/4/20,CIND,8,impatiens,red clover,worker,3,1,1,0,763450.072,63849.14521,0
+90,9/9/20,FLAN,4,impatiens,jewel weed,worker,4,1,0,0,4549276.551,0,0
+91,9/10/20,COL,20,impatiens,red clover,worker,4,1,0,0,603243.0984,0,0
+92,8/4/20,CIND,18,impatiens,red clover,worker,3,0,1,0,0,10583123.59,0
+93,8/4/20,MUDGE,6,impatiens,crown vetch,worker,3,1,1,0,47642.70823,256610.153,0
+94,9/10/20,COL,15,impatiens,red clover,worker,4,1,1,0,326788.5041,53631.28972,0
+95,9/9/20,FLAN,2,impatiens,jewel weed,worker,4,1,0,0,179772.9241,0,0
+96,9/9/20,FLAN,26,impatiens,jewel weed,worker,4,1,0,0,1743474.371,0,0
+97,8/4/20,MUDGE,35,impatiens,saint johns wort,worker,3,1,0,0,630583.5509,0,0
+98,9/9/20,FLAN,18,impatiens,crown vetch,worker,4,1,1,0,33358264.69,406694.2946,0
+99,9/10/20,COL,35,impatiens,red clover,worker,4,1,0,0,6729052.162,0,0
+100,9/9/20,FLAN,19,impatiens,crown vetch,worker,4,1,0,0,13081173.46,0,0
+101,9/10/20,COL,10,impatiens,red clover,worker,4,1,0,0,326888.3201,0,0
+102,9/9/20,FLAN,36,impatiens,crown vetch,worker,4,1,0,0,1604929.842,0,0
+103,8/4/20,CIND,19,impatiens,red clover,worker,3,1,0,1,194967628.3,0,2.00E+05
+104,9/9/20,FLAN,14,impatiens,thistle,worker,4,1,0,0,370163.5785,0,0
+105,8/4/20,CIND,22,impatiens,red clover,worker,3,1,1,1,2786786.027,40086.70856,4.00E+05
+106,9/9/20,FLAN,6,impatiens,jewel weed,worker,4,1,0,1,2339482.676,0,25000
+107,8/4/20,CIND,1,impatiens,red clover,worker,3,1,0,0,60166705.31,0,0
+108,9/9/20,FLAN,35,impatiens,crown vetch,worker,4,1,1,1,50080816.32,151121.6798,25000
+109,8/4/20,MUDGE,5,impatiens,crown vetch,worker,3,1,0,0,2001908.368,0,0
+110,8/4/20,MUDGE,22,impatiens,crown vetch,worker,3,1,0,0,5471002.805,0,0
+111,9/10/20,MUDGE,4,impatiens,crown vetch,worker,4,1,0,1,26657272.76,0,1.00E+05
+112,9/9/20,FLAN,3,impatiens,jewel weed,worker,4,1,1,0,1953482.461,249829.5625,0
+113,9/9/20,FLAN,21,impatiens,jewel weed,worker,4,1,0,NA,57992.60354,0,NA
+114,8/4/20,MUDGE,26,impatiens,crown vetch,worker,3,1,0,1,236256.452,0,25000
+115,9/10/20,COL,43,impatiens,red clover,worker,4,1,0,1,1592536.418,0,25000
+116,9/9/20,FLAN,15,impatiens,solidago,worker,4,1,0,0,393426.1637,0,0
+117,8/4/20,MUDGE,9,impatiens,saint johns wort,worker,3,1,1,1,1029033.872,725963.376,275000
+118,9/9/20,FLAN,22,impatiens,jewel weed,worker,4,1,0,0,64821.90326,0,0
+119,9/9/20,FLAN,34,impatiens,solidago,worker,4,1,1,NA,362856.5744,47620.66336,NA
+120,9/10/20,COL,3,impatiens,red clover,worker,4,0,0,0,0,0,0
+121,9/10/20,COL,32,impatiens,red clover,worker,4,1,1,1,1714278.269,7559114.182,425000
+122,8/4/20,MUDGE,34,impatiens,saint johns wort,worker,3,1,0,0,4187876.004,0,0
+123,9/10/20,COL,41,impatiens,red clover,worker,4,1,0,0,5659568.443,0,0
+124,8/4/20,MUDGE,27,impatiens,crown vetch,worker,3,1,1,0,29420088.72,30378.28692,0
+125,7/7/20,BOST,28,impatiens,red clover,worker,2,1,0,0,7410128.056,0,0
+126,9/9/20,FLAN,27,impatiens,jewel weed,worker,4,1,0,0,1198131.813,0,0
+127,9/10/20,COL,7,impatiens,red clover,worker,4,1,1,0,1535644.633,889693.2953,0
+128,9/9/20,FLAN,41,impatiens,jewel weed,worker,4,1,0,0,5552512.921,0,0
+129,9/9/20,FLAN,37,impatiens,crown vetch,worker,4,0,1,0,0,20956.61133,0
+131,5/9/20,CIND,24,impatiens,dandelion,queen,1,1,0,1,76405.36613,0,475000
+132,9/9/20,FLAN,38,impatiens,crown vetch,worker,4,0,0,0,0,0,0
+133,9/9/20,FLAN,17,impatiens,flight,worker,4,1,0,0,6106706.089,0,0
+134,9/10/20,COL,34,impatiens,red clover,worker,4,0,0,1,0,0,50000
+135,5/9/20,CIND,22,impatiens,dandelion,queen,1,0,0,0,0,0,0
+136,7/7/20,BOST,31,impatiens,red clover,worker,2,1,0,0,78963.49771,0,0
+137,9/9/20,FLAN,42,impatiens,jewel weed,worker,4,1,0,1,7618807.846,0,3.00E+05
+138,5/9/20,CIND,19,impatiens,flight,queen,1,1,1,1,902648.3157,30586.43443,75000
+140,7/7/20,BOST,11,fervidus,red clover,worker,2,1,1,0,843998381.3,78891.02641,0
+141,5/9/20,CIND,16,impatiens,dandelion,queen,1,1,0,0,704378.3151,0,0
+142,5/9/20,CIND,4,impatiens,dandelion,queen,1,1,0,0,2816998.172,0,0
+143,9/9/20,FLAN,10,impatiens,jewel weed,worker,4,1,0,0,61195.29512,0,0
+144,9/10/20,COL,6,impatiens,red clover,worker,4,1,0,0,5709983.477,0,0
+145,9/10/20,COL,38,impatiens,red clover,worker,4,1,0,0,1380674.89,0,0
+146,9/9/20,FLAN,13,impatiens,solidago,worker,4,1,0,0,796240.4438,0,0
+147,9/10/20,COL,24,impatiens,red clover,worker,4,1,0,0,11939810.56,0,0
+148,9/10/20,COL,33,impatiens,red clover,worker,4,1,0,0,527529.2194,0,0
+149,9/9/20,FLAN,28,impatiens,jewel weed,worker,4,1,1,0,1308993.111,99333.68467,0
+150,9/9/20,FLAN,12,impatiens,jewel weed,worker,4,1,0,1,1888117.527,0,75000
+151,9/9/20,FLAN,40,impatiens,jewel weed,worker,4,1,0,NA,3253650.592,0,NA
+153,9/9/20,FLAN,8,impatiens,jewel weed,worker,4,1,1,0,5018574.565,378204.8284,0
+154,9/9/20,FLAN,20,impatiens,crown vetch,worker,4,1,0,0,1659515.569,0,0
+155,9/10/20,COL,28,impatiens,red clover,worker,4,1,0,0,4338755.212,0,0
+157,9/10/20,COL,2,impatiens,red clover,worker,4,1,0,0,2757942.481,0,0
+158,9/10/20,COL,30,impatiens,red clover,worker,4,1,0,1,223704.1475,0,25000
+159,9/9/20,FLAN,39,impatiens,jewel weed,worker,4,1,0,0,53534138.95,0,0
+160,5/9/20,CIND,6,impatiens,dandelion,queen,1,0,1,0,0,184090.1021,0
+161,9/9/20,FLAN,33,impatiens,solidago,worker,4,1,0,1,81641.5397,0,75000
+162,9/10/20,COL,16,impatiens,red clover,worker,4,1,1,1,177179.2346,1027736.914,25000
+163,9/10/20,COL,45,impatiens,red clover,worker,4,1,0,1,2388458588,0,2.00E+05
+164,7/7/20,BOST,22,impatiens,red clover,worker,2,1,0,0,643801.4517,0,0
+165,9/10/20,COL,8,impatiens,red clover,worker,4,0,0,0,0,0,0
+166,9/10/20,COL,26,impatiens,red clover,worker,4,1,0,1,2410337.162,0,2325000
+167,9/10/20,COL,27,impatiens,red clover,worker,4,1,0,0,42619.31413,0,0
+168,5/9/20,CIND,1,impatiens,dandelion,queen,1,1,0,1,5247608.911,0,25000
+169,7/7/20,BOST,14,impatiens,red clover,queen,2,1,0,1,582762.4534,0,75000
+170,5/9/20,CIND,2,impatiens,dandelion,queen,1,1,0,1,1292857.221,0,125000
+171,9/10/20,COL,37,impatiens,red clover,worker,4,1,0,1,302378.4899,0,475000
+172,9/9/20,FLAN,44,impatiens,jewel weed,worker,4,1,NA,0,610212.478,NA,0
+173,5/9/20,CIND,14,impatiens,dandelion,queen,1,1,0,0,1164478.736,0,0
+174,5/9/20,CIND,31,impatiens,flight,queen,1,1,0,0,61269.06858,0,0
+175,5/17/20,FLAN,4,impatiens,flight,queen,1,1,0,0,12337518.47,0,0
+176,8/3/20,FLAN,37,impatiens,crown vetch,worker,3,1,0,1,2986283.083,0,475000
+177,9/10/20,COL,22,impatiens,red clover,worker,4,1,0,0,67527.50962,0,0
+178,8/3/20,FLAN,38,impatiens,crown vetch,worker,3,1,1,0,245765.2176,116785.6894,0
+179,9/10/20,COL,13,impatiens,red clover,worker,4,1,0,0,426157.4358,0,0
+180,8/3/20,FLAN,2,impatiens,crown vetch,worker,3,1,1,0,36457025372,433402.5103,0
+181,8/3/20,BOST,22,impatiens,red clover,worker,3,NA,0,0,NA,0,0
+183,8/3/20,FLAN,30,impatiens,crown vetch,worker,3,1,1,NA,427933.9735,2446585.608,NA
+184,8/3/20,BOST,17,impatiens,knot weed,male,3,1,1,1,8049923.967,58954.80399,125000
+185,5/17/20,FLAN,19,impatiens,woody yellow ,queen,1,1,0,1,355098.2834,0,25000
+186,9/10/20,COL,19,impatiens,red clover,worker,4,0,0,0,0,0,0
+187,9/10/20,COL,1,impatiens,red clover,worker,4,1,0,0,9808910.744,0,0
+188,9/10/20,COL,42,impatiens,red clover,worker,4,1,0,0,540047.8296,0,0
+189,8/3/20,FLAN,5,impatiens,crown vetch,worker,3,1,1,0,31338.03199,30205.36712,0
+190,8/3/20,FLAN,26,impatiens,crown vetch,worker,3,1,1,0,74235.81861,556917.6084,0
+191,8/3/20,FLAN,29,impatiens,crown vetch,worker,3,1,1,1,4860884.17,182881.4465,175000
+192,7/6/20,MUDGE,5,impatiens,crown vetch,worker,2,1,0,NA,5394648.33,0,NA
+193,8/3/20,FLAN,9,impatiens,crown vetch,worker,3,1,0,1,10923483.95,0,125000
+194,5/9/20,CIND,10,impatiens,dandelion,queen,1,1,0,0,2754065.982,0,0
+195,8/3/20,FLAN,39,impatiens,crown vetch,worker,3,1,0,1,24848.74151,0,25000
+239,8/3/20,FLAN,40,impatiens,crown vetch,worker,3,1,0,0,326788.5041,0,0
+240,9/10/20,COL,48,impatiens,red clover,worker,4,1,0,0,107934.2342,0,0
+242,8/3/20,BOST,13,impatiens,red clover,worker,3,1,0,0,122591.3186,0,0
+243,8/3/20,FLAN,6,impatiens,crown vetch,worker,3,1,0,1,308792.2399,0,25000
+244,9/10/20,COL,14,impatiens,red clover,worker,4,1,0,1,1576721.004,0,25000
+245,8/3/20,BOST,16,impatiens,red clover,worker,3,1,0,0,260594.4759,0,0
+246,5/17/20,FLAN,5,impatiens,flight,queen,1,0,0,0,0,0,0
+247,5/17/20,BOST,6,impatiens,dandelion,queen,1,1,0,0,450965.5599,0,0
+248,5/17/20,BOST,37,impatiens,flight,queen,1,1,1,1,718026.7561,61398.48145,1250000
+249,5/17/20,BOST,17,impatiens,dandelion,queen,1,1,1,1,623933.6988,136116.3492,50000
+250,7/11/20,CIND,13,impatiens,red clover,worker,2,1,0,1,174070.5135,0,2.00E+05
+251,8/4/20,MUDGE,29,impatiens,crown vetch,worker,3,1,0,1,61208.82373,0,75000
+252,8/3/20,FLAN,35,impatiens,crown vetch,worker,3,0,1,1,0,720599.9244,125000
+253,8/3/20,FLAN,11,impatiens,crown vetch,worker,3,1,0,0,618371.934,0,0
+254,8/3/20,FLAN,20,impatiens,crown vetch,worker,3,1,1,0,5701034.925,1694945.559,0
+261,7/6/20,MUDGE,4,impatiens,crown vetch,worker,2,1,0,1,434218.7072,0,25000
+262,8/3/20,FLAN,27,impatiens,crown vetch,worker,3,1,1,0,1299436.995,126422.8765,0
+263,5/17/20,BOST,19,impatiens,flight,queen,1,1,1,0,5104085.509,51264.81554,0
+264,5/17/20,BOST,25,impatiens,flight,queen,1,0,0,1,0,0,75000
+265,8/3/20,BOST,11,impatiens,red clover,worker,3,1,1,1,738805.2493,31909.13484,50000
+266,5/17/20,BOST,3,impatiens,flight,queen,1,1,0,1,17980442.56,0,150000
+267,8/4/20,MUDGE,28,impatiens,crown vetch,worker,3,NA,1,1,NA,1272806.155,425000
+268,8/3/20,BOST,21,impatiens,red clover,worker,3,1,1,0,209169.4008,99217.12906,0
+269,8/3/20,FLAN,3,impatiens,crown vetch,worker,3,1,0,0,2122871.109,0,0
+270,5/17/20,BOST,12,impatiens,flight ,queen,1,1,0,NA,39246481.72,0,NA
+271,9/10/20,COL,12,impatiens,red clover,worker,4,1,0,0,245525.8,0,0
+272,9/10/20,COL,21,impatiens,red clover,worker,4,1,1,0,2487165.773,149054.0188,0
+273,9/9/20,FLAN,11,impatiens,jewel weed,worker,4,1,0,0,1256888.119,0,0
+274,8/3/20,BOST,18,impatiens,red clover,worker,3,1,1,0,585573.6525,193393.2597,0
+275,8/3/20,BOST,20,impatiens,red clover,worker,3,1,0,0,4503577.621,0,0
+276,8/3/20,FLAN,4,impatiens,crown vetch,worker,3,1,1,0,11464856.47,264516.9916,0
+277,5/17/20,BOST,32,impatiens,flight,queen,1,1,0,0,14676744.69,0,0
+278,9/10/20,COL,31,impatiens,red clover,worker,4,1,1,0,14842177.38,347804.2181,0
+279,9/10/20,COL,9,impatiens,red clover,worker,4,1,0,1,14730705.86,0,50000
+280,8/3/20,FLAN,8,impatiens,crown vetch,worker,3,1,1,0,4908563.113,66025.64989,0
+282,9/10/20,COL,17,impatiens,red clover,worker,4,1,0,0,5271939.37,0,0
+284,5/17/20,FLAN,17,impatiens,mint,queen,1,1,0,1,163841148.4,0,25000
+285,5/17/20,BOST,10,impatiens,dandelion,queen,1,1,0,0,151227.4746,0,0
+286,8/3/20,FLAN,16,impatiens,crown vetch,worker,3,0,1,1,0,747944.7387,125000
+288,8/3/20,BOST,4,impatiens,red clover,worker,3,1,0,0,24654207.84,0,0
+289,5/17/20,FLAN,12,impatiens,dandelion,queen,1,NA,0,0,NA,0,0
+290,8/4/20,MUDGE,2,impatiens,saint johns wort,worker,3,1,0,0,52360.71536,0,0
+291,5/17/20,BOST,20,impatiens,flight,queen,1,1,1,1,4033891.246,19393.70938,1.00E+05
+293,8/3/20,BOST,19,impatiens,red clover,worker,3,1,1,1,2655300.769,61498.6531,50000
+294,8/3/20,BOST,14,impatiens,red clover,worker,3,1,0,1,9095157.376,0,25000
+295,9/10/20,COL,18,impatiens,flight,worker,4,1,0,1,6258156.771,0,25000
+296,5/17/20,FLAN,2,impatiens,dandelion,queen,1,1,0,0,159667.1872,0,0
+297,5/17/20,BOST,4,impatiens,dandelion,queen,1,1,0,0,147160.5964,0,0
+298,8/3/20,BOST,6,impatiens,red clover,worker,3,1,0,1,5296788.705,0,525000
+303,9/9/20,FLAN,32,impatiens,jewel weed,worker,4,1,0,NA,127441.5235,0,NA
+305,5/17/20,BOST,34,impatiens,flight,queen,1,1,NA,1,94441.89648,NA,25000
+306,8/3/20,FLAN,14,impatiens,crown vetch,worker,3,1,0,1,5368945.289,0,125000
+307,8/3/20,FLAN,33,impatiens,crown vetch,worker,3,1,0,1,929073.6026,0,125000
+309,5/17/20,FLAN,1,impatiens,dandelion,queen,1,1,1,0,74898816.13,42326.31683,0
+310,5/17/20,FLAN,8,impatiens,flight,queen,1,1,1,0,313190.3742,92128.35893,0
+311,8/3/20,FLAN,18,impatiens,crown vetch,worker,3,1,1,1,20811964.2,396988.6571,125000
+312,8/3/20,FLAN,15,impatiens,crown vetch,worker,3,1,0,1,370282.7155,0,150000
+313,8/4/20,CIND,16,impatiens,red clover,worker,3,1,0,0,28088946.07,0,0
+314,8/4/20,CIND,3,impatiens,red clover,worker,3,1,1,0,2151307.082,564461.3832,0
+315,8/4/20,CIND,23,impatiens,red clover,worker,3,1,1,NA,250610.6726,316181.1527,NA
+316,9/10/20,COL,23,impatiens,red clover,worker,4,1,0,0,36033243.57,0,0
+317,8/4/20,CIND,15,impatiens,red clover,worker,3,1,0,0,100889.3857,0,0
+318,8/3/20,FLAN,13,impatiens,cr+H262own vetch,worker,3,1,NA,NA,22427345.12,NA,NA
+318,8/3/20,FLAN,13,impatiens,crown vetch,worker,3,NA,0,1,NA,0,25000
+319,8/4/20,COL,11,impatiens,NA,worker,3,1,0,0,3106413.843,0,0
+321,8/4/20,COL,15,impatiens,jewel weed,worker,3,NA,1,1,NA,140656.235,75000
+321,8/4/20,COL,15,impatiens,jewlweed,worker,3,1,NA,NA,515859754.7,NA,NA
+324,5/19/20,MUDGE,29,impatiens,dandelion,queen,1,1,0,0,2655300.769,0,0
+325,5/19/20,COL,29,impatiens,dandelion,queen,1,1,0,0,53080779564,0,0
+327,8/4/20,COL,17,impatiens,red clover,worker,3,1,1,0,654161.4586,88245.25283,0
+328,5/19/20,COL,35,impatiens,dandelion,queen,1,1,0,0,13418152.92,0,0
+330,5/19/20,MUDGE,14,impatiens,dandelion,queen,1,1,0,1,796482.5687,0,50000
+331,5/19/20,COL,28,impatiens,dandelion,queen,1,1,0,1,125927.9357,0,475000
+332,8/4/20,COL,4,impatiens,red clover,worker,3,1,0,0,1337305.322,0,0
+333,5/19/20,MUDGE,45,impatiens,flight,queen,1,1,1,NA,10763793.55,67075.84986,NA
+334,5/19/20,COL,30,impatiens,flight,queen,1,1,0,1,850419.4097,0,75000
+335,5/19/20,COL,32,impatiens,dandelion,queen,1,1,1,0,630146.3174,104099.8413,0
+336,8/4/20,COL,9,impatiens,red clover,worker,3,1,1,0,118549.1656,114227.3664,0
+337,5/19/20,COL,8,impatiens,flight,queen,1,0,0,0,0,0,0
+338,8/4/20,COL,5,impatiens,red clover,worker,3,0,1,0,0,122840.9351,0
+339,5/19/20,MUDGE,23,impatiens,dandelion,queen,1,1,1,0,352749.458,148468.5203,0
+340,8/4/20,COL,6,impatiens,red clover,worker,3,1,0,1,2318601.192,0,25000
+341,7/6/20,FLAN,42,impatiens,red clover,worker,2,1,0,0,399109.5696,0,0
+342,7/6/20,FLAN,33,impatiens,crown vetch,worker,2,1,1,1,3274438.627,85731.68389,125000
+343,5/19/20,COL,11,impatiens,dandelion,queen,1,1,1,0,292883.5181,45105.59106,0
+344,5/17/20,FLAN,6,vagans,dandelion,queen,1,1,1,NA,187044.7005,66219.96689,NA
+345,7/6/20,FLAN,3,impatiens,crown vetch,worker,2,1,0,0,22159974.91,0,0
+346,5/17/20,FLAN,19,impatiens,woody yellow ,queen,1,1,1,NA,3697555.576,309097.5891,NA
+347,7/6/20,FLAN,5,impatiens,saint johns wort,worker,2,1,1,1,829342.4634,69652.52608,25000
+348,7/6/20,FLAN,36,impatiens,crown vetch,worker,2,1,1,NA,4674828.649,68145.99764,NA
+358,5/19/20,COL,6,impatiens,dandelion,queen,1,1,1,0,465800.823,145145.4611,0
+359,5/19/20,COL,9,impatiens,dandelion,queen,1,1,1,0,648355682.6,703391.3516,0
+360,7/6/20,FLAN,15,impatiens,red clover,worker,2,1,0,0,545615.7883,0,0
+361,5/19/20,COL,27,impatiens,dandelion,queen,1,1,1,0,355371.8121,131111.6618,0
+362,7/6/20,FLAN,40,impatiens,saint johns wort,worker,2,0,1,1,0,2088123.827,325000
+363,5/17/20,FLAN,18,impatiens,violet ,queen,1,1,0,0,2027129.258,0,0
+364,7/6/20,FLAN,53,impatiens,red clover,worker,2,1,0,0,2620980.728,0,0
+366,7/6/20,FLAN,56,impatiens,red clover,worker,2,1,0,1,13548387.37,0,525000
+368,7/6/20,FLAN,55,impatiens,red clover,queen,2,NA,1,0,NA,66036.57169,0
+369,5/17/20,FLAN,24,bimaculatus,flight,queen,1,1,0,1,3238595.935,0,1175000
+370,5/17/20,FLAN,20,bimaculatus,violet ,queen,1,1,1,0,11384850.86,403374.8131,0
+371,5/17/20,FLAN,17,impatiens,mint,queen,1,1,1,0,531094.1246,3765789478,0
+372,5/19/20,COL,31,impatiens,flight,queen,1,1,0,1,205182854.4,0,75000
+373,5/19/20,COL,33,impatiens,dandelion,queen,1,1,1,1,1012992.437,247958.4698,25000
+374,8/4/20,CIND,5,impatiens,red clover,worker,3,1,0,0,2616767.527,0,0
+376,5/17/20,BOST,27,impatiens,flight,queen,1,1,1,0,13289577.01,608799.4372,0
+377,5/19/20,COL,1,impatiens,dandelion,queen,1,1,0,0,1232911.193,0,0
+379,7/6/20,FLAN,34,impatiens,crown vetch,worker,2,1,0,1,2327661.105,0,50000
+380,7/6/20,FLAN,12,impatiens,saint johns wort,worker,2,1,0,1,2575431.569,0,225000
+381,5/19/20,COL,4,ternarius,dandelion,queen,1,1,0,1,6159383.031,0,75000
+383,5/17/20,FLAN,22,bimaculatus,violet,queen,1,0,0,0,0,0,0
+384,7/6/20,FLAN,16,impatiens,red clover,worker,2,1,0,0,41570992.9,0,0

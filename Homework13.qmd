@@ -1,0 +1,49 @@
+---
+title: "Homework 13"
+format: html
+---
+
+-----------------------------------------
+Sof Antelo's CompBio Lab Homework 13
+4/15/26
+GLMMs
+-----------------------------------------
+
+ASSIGNMENT: Using a dataset of your choice, ask two separate questions about the data and construct an appropriate model and figure to test and visualize each one.
+
+For both questions I am going to use the bee dataset from the GLMMs lecture
+
+Question 1: Can Bee Species be a predictor for BQCV prevalence?
+
+```{r}
+# load packages
+library(tidyverse)
+library(lubridate)
+library(lme4)
+library(car)
+
+#loading the data
+bee_data <- read_csv("data/Burnham_field_data_pathogens_wide.csv")
+bee_dat <- bee_dat %>%
+  mutate(
+    sampling_date = mdy(sampling_date),
+    site_code = factor(site_code),
+    field_id = factor(field_id),
+    bee_caste = factor(bee_caste),
+    bombus_spp = factor(bombus_spp),
+    host_plant = factor(host_plant),
+    sampling_event = factor(sampling_event),
+    sampling_event_num = as.numeric(as.character(sampling_event)),
+    log10_BQCV_load = log10(BQCV_pathogen_load + 1),
+    log10_DWV_load = log10(DWV_pathogen_load + 1),
+    log10_Nosema_load = log10(Nosema_pathogen_load + 1)
+  )
+
+glimpse(bee_dat)
+
+
+```
+Question 2:
+```{r}
+
+```
