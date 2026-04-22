@@ -46,4 +46,5 @@ glimpse(bee_dat)
 Question 2:
 ```{r}
 
+
 ```
