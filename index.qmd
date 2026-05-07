@@ -20,8 +20,10 @@ y<-c(3,4,5)
 
 print(x)
 ```
+-------
 
 -------
+
 [Homework 3](homework3.html)
 -------
 [Homework 4](homework4.html)
@@ -45,3 +47,4 @@ print(x)
 [Homework 13](Homework13.html)
 -------
 [Homework 14](Homework14.html)
+-------
