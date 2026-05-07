@@ -4,7 +4,7 @@ format: html
 ---
 
 -----------------------------------------
-Sof Antelo's CompBio Lab Homework 13
+Sof Antelo's CompBio Lab Homework 14
 4/15/26
 Multivariate analysis
 -----------------------------------------
@@ -16,19 +16,131 @@ PCA:
 ```{r}
 
 #setting up 
-set.seed(1)
-
-library(ggplot2)
-library(psych)       
+set.seed(123)
+library(tidyverse)
+library(psych)
 library(randomForest)
+library(gapminder)
+
+head(gapminder)
+#PCA
+gapminder_num <-gapminder %>%
+    select(lifeExp, pop, gdpPercap, year)
+
+gap_continent <- gapminder$continent
+round(cor(gapminder_num), 3)
+bart <- cortest.bartlett(cor(gapminder_num), n =nrow(gapminder_num))
+bart
+pca <- prcomp(gapminder_num, center = TRUE, scale. = TRUE)
+summary(pca)
+eig <- pca$sdev^2
+pve <- eig / sum(eig)
+
+pca_var_table <- data.frame(
+    PC = paste0("PC", 1:length(eig)),
+    Eigenvalue = round(eig, 3),
+    PVE = round(pve, 3),
+    CumPVE = round(cumsum(pve), 3)
+)
+pca_var_table
+plot(eig, type = "b", pch = 19,
+xlab = "Principal component",
+ylab = "Eigenvalue",
+main = "Scree plot (Gapminder PCR)")
+#test
+broken_stick <- function(p) sapply(1:p, function(k) sum(1/(k:p)) / p)
+bs <- broken_stick(ncol(gapminder_num))
+
+retain <- data.frame( 
+    PC = paste0("PC", 1:length(pve)),
+    ObservedPVE = round(pve, 3),
+    BrokenStick = round(bs, 3),
+    Keep = pve > bs
+)
+retain
+head(pca$x)
+pca$rotation
 
 
-library(datasets)
-data()
+#getting scores
+scores <- as.data.frame(pca$x)
+scores$continent <- gapminder$continent
+scores$country <- gapminder$country
+scores$year <- gapminder$year
 
-head(DNase)
-str(DNase)
-#i want to use numeric variables so I will not be using species as it is not one
+pca_plot <- ggplot(scores, aes(PC1, PC2, color = continent)) +
+    geom_point(size = 0.7, alpha = 0.15) +
+    theme_minimal() +
+    labs(title = "PCA on Gapminder Data", subtitle = "PCA is unsupervised")
 
-
+pca_plot + stat_ellipse()
+man <- manova(cbind(PC1, PC2) ~ continent, data = scores)
+summary(man, test = "Pillai")
 ```
+Questions:
+
+Based on a scree plot and broken stick test how many PCs are needed? How much variance is explained by PC1 and PC2?
+    Based on the scree plot and broken stick test, PC3 and PC4 are neeeded. PC1 explains 46.33% of variance - PC2 explains 25.51% of variance. PC1 + PC2 = 71.84
+
+Do you see good separation of your groups on either axis?
+    There is a lack of clear separation of groups on either axis. Although Africa tends to have a negative PC1 value (low lifeExp and GDP), and Europe + Oceania tend to have positive PC1 values (Oceania n=2) the major these data show significant overlapping. Overall, this suggests that the continent in which a country is in does not determine where it falls in global variation in life expectancy, GDP and population. This shows that countries within the same continent specifically in the Americas and Asia, have a large range of economic development.
+
+Conduct a significance test. Is there a difference between groups?
+    There is a statistically significant difference between continents in the PC1-PC2, p = 2.2e-16
+
+Based on the loadings, what variables are contributing the most to PC1 and PC2?
+    lifexp is contributing the most for PC1 and population is contributing the most to PC2 
+
+Random Forest:
+```{r}
+#Hypothesis: We can accurately classify continent using socioeconomic variables
+set.seed(123)
+id_train <- sample(seq_len(nrow(gapminder)), size = 0.7 * nrow(gapminder))
+train <- gapminder[id_train, ]
+test <- gapminder[-id_train, ]
+
+table(train$continent)
+#fit a random forest classifier
+rf <- randomForest(
+    continent ~ lifeExp + pop + gdpPercap + year, 
+    data = train,
+    ntree = 500,
+    mtry = 2, 
+    importance = TRUE 
+)
+rf
+
+pred <- predict(rf, newdata = test)
+
+#confusion matrix
+conf <- table(Observed = test$continent, Predicted = pred)
+conf
+
+acc <- mean(pred == test$continent)
+acc
+
+# OOB error Curve
+plot(rf, main = "Random Forest OOB Error vs Number of Trees")
+
+# Importance
+importance(rf)
+varImpPlot(rf)
+```
+Questions: 
+
+What is your OOB?
+    26.43%
+
+Based on your confusion matrix, how accurate was your model at classifying?
+    The model correcetly classified 75.2% of the test set countries.    
+
+What variables were most important based on: Mean Decrease Accuracy, Mean Decrease Gini?
+    The variables most important based on mean decrease accuracy were in order of greatest to least- lifeExp, gdpPercap, pop, year. For mean decrease gini in order of greatest to least- lifeexp, gdppercap, pop, year; they are in agreeance 
+
+
+Did your two models agree or disagree on variable importance?
+    The two models agreed on all four variables 
+
+What differences did you notice based on the two approaches?
+PCA compares the maximum variance without using continent labels and found that population creates the biggest spread in data. RF compares with continent labels to figure out what best predicts which continent a country belongs to. It found that while population is important, lifeexp and gdppercap was more important, within a continent population can vary a lot. 
+The takeaway is that factors of variance is don't predict groups. Population is not a predictor of continent.

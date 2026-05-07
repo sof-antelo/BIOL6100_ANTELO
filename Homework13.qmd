@@ -13,7 +13,9 @@ ASSIGNMENT: Using a dataset of your choice, ask two separate questions about the
 
 For both questions I am going to use the bee dataset from the GLMMs lecture
 
-Question 1: Can Bee Species be a predictor for BQCV prevalence?
+Question 1: Can Site be a predictor for Nosema Load?
+  Hypothesis: Nosema is transmitted through visiting fowers; there should be a relationship between nosema load and site.
+  Null Hypothesis: There is not a relationship between site and nosema load.
 
 ```{r}
 # load packages
@@ -24,7 +26,7 @@ library(car)
 
 #loading the data
 bee_data <- read_csv("data/Burnham_field_data_pathogens_wide.csv")
-bee_dat <- bee_dat %>%
+bee_dat <- bee_data %>%
   mutate(
     sampling_date = mdy(sampling_date),
     site_code = factor(site_code),
@@ -40,11 +42,44 @@ bee_dat <- bee_dat %>%
   )
 
 glimpse(bee_dat)
+df_filtered <- bee_dat[bee_dat$log10_Nosema_load > 0 & bee_dat$log10_BQCV_load > 0, ]
 
+Nosema_by_field <- glm(
+  log10_Nosema_load ~ field_id,
+  data = df_filtered)
+
+by_field <- Anova(Nosema_by_field)
+print(by_field)
+
+
+qplot(
+  x = field_id,
+  y = log10_Nosema_load,
+  data = df_filtered) +
+geom_boxplot(method = "lm", se = TRUE)
 
 ```
-Question 2:
+p-value of 0.03056 is statictically significant, meaning we can reject the null hypothesis and accept the alternative hypothesis.
+
+Question 2: Can species be a predictor for BQCV?
+  Hypothesis: Species is a predictor for BQCV.
+  Null: Species does not impact BQCV load.
 ```{r}
+bqcv_site <- lmer(
+  log10_BQCV_load ~ bombus_spp + (1 | sampling_event),
+  data = df_filtered)
+Anova(bqcv_site)
+
+#(1 | sampling_event) takes random sampling effects into account
+df_filtered <- bee_dat[bee_dat$log10_Nosema_load > 0 & bee_dat$log10_BQCV_load > 0, ]
 
 
+g2 <- ggplot(data=df_filtered) +
+          aes(x=log10_BQCV_load) +
+          geom_bar(fill="tomato",color="black")+ 
+          theme(legend.position="none")
+  theme(legend.position = "top")
+  theme(legend.position = c(.2, .8))
+  print(g2)   
 ```
+p-value of 0.9161 is not statictically significant, meaning we fail to reject the null hypothesis and reject the alternative hypothesis. This means we cannot consider species to be a predictor for bqcv load. 

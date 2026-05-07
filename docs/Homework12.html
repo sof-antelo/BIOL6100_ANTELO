@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Homework 12 – Comp Bio Webpage Spring 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script>
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+</script>
+<script type="module">import "https://cdn.plot.ly/plotly-3.4.0.min"</script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Comp Bio Webpage Spring 2026</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 12</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sof Antelo’s CompBio Lab Homework 12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4/8/26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mapping with Plotly</td>
+</tr>
+</tbody>
+</table>
+<p>PART 1: Choropleth map of GDP in Europe</p>
+<div id="54fca080" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bokeh.palettes <span class="im">import</span> viridis</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> networkx.algorithms.bipartite <span class="im">import</span> projection</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#loading data, filtering for Europe and a specific year, I am using 2002</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>gap <span class="op">=</span> px.data.gapminder().query(<span class="st">"continent=='Europe' and year == 2002"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>gap.head()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#making choropleth map</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.choropleth(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>     gap,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    locations <span class="op">=</span> <span class="st">"iso_alpha"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"gdpPercap"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    hover_name <span class="op">=</span> <span class="st">"country"</span>,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    hover_data <span class="op">=</span> {</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pop"</span>: <span class="st">":,"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"gdpPercap"</span>: <span class="st">":,.2f"</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"iso_alpha"</span>: <span class="va">False</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span><span class="st">"viridis"</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"GDP per cap. by country (2002)"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> {<span class="st">"country"</span>:<span class="st">"Country"</span>, <span class="st">"pop"</span>:<span class="st">"Population"</span>,<span class="st">"gdpPercap"</span>:<span class="st">"GDP per Capita"</span>}</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">#scope</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>fig.update_geos(</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    scope <span class="op">=</span> <span class="st">"europe"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    showland <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">#I used the additional argument 'scope'. 'Scope' essentially crops the map, so I cropped it to focus on Europe. </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="3de84695-406e-4716-8a33-752321adefe6" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3de84695-406e-4716-8a33-752321adefe6")) {                    Plotly.newPlot(                        "3de84695-406e-4716-8a33-752321adefe6",                        [{"coloraxis":"coloraxis","customdata":[[3508512,4604.211737,"ALB"],[8148312,32417.60769,"AUT"],[10311970,30485.88375,"BEL"],[4165416,6018.975239,"BIH"],[7661799,7696.777725,"BGR"],[4481020,11628.38895,"HRV"],[10256295,17596.210219999994,"CZE"],[5374693,32166.50006,"DNK"],[5193039,28204.59057,"FIN"],[59925035,28926.03234,"FRA"],[82350671,30035.80198,"DEU"],[10603863,22514.2548,"GRC"],[10083313,14843.93556,"HUN"],[288030,31163.20196,"ISL"],[3879155,34077.04939,"IRL"],[57926999,27968.09817,"ITA"],[720230,6557.194282,"MNE"],[16122830,33724.75778,"NLD"],[4535591,44683.97525,"NOR"],[38625976,12002.23908,"POL"],[10433867,19970.90787,"PRT"],[22404337,7885.360081,"ROU"],[10111559,7236.075251,"SRB"],[5410052,13638.778369999998,"SVK"],[2011497,20660.01936,"SVN"],[40152517,24835.47166,"ESP"],[8954175,29341.630930000007,"SWE"],[7361757,34480.95771,"CHE"],[67308928,6508.085718,"TUR"],[59912431,29478.99919,"GBR"]],"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003ePopulation=%{customdata[0]:,}\u003cbr\u003eGDP per Capita=%{z:,.2f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Albania","Austria","Belgium","Bosnia and Herzegovina","Bulgaria","Croatia","Czech Republic","Denmark","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Serbia","Slovak Republic","Slovenia","Spain","Sweden","Switzerland","Turkey","United Kingdom"],"locations":["ALB","AUT","BEL","BIH","BGR","HRV","CZE","DNK","FIN","FRA","DEU","GRC","HUN","ISL","IRL","ITA","MNE","NLD","NOR","POL","PRT","ROU","SRB","SVK","SVN","ESP","SWE","CHE","TUR","GBR"],"name":"","z":{"dtype":"f8","bdata":"WmJlNDb8sUAHmWTkZqjfQPYoXI94xd1AyVpDqfmCt0BIUPwYxxC+QOQUHckxtsZAPJY+dA0v0UCCqPsAoGnfQAAd5ssli9tAl8rbEYI\u002f3EAD7KNT81TdQMGopE6Q\u002fNVAuRluwPf9zEDGounszG7eQFhWmpSho+BA3dJqSAZQ20A0FHe8MZ25QLLXuz+Yd+BA7nw\u002fNX\u002fR5UCQZiyaHnHHQMHFihq6gNNA6bZELlzNvkD+R6ZDE0S8QBfPoKFjo8pAtrkxPQEt1EC1bK0v3kDYQAY5KGFop9xAInGPpR7W4ECuZp3xFWy5QB+duvK\u002fydxA"},"type":"choropleth"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{},"scope":"europe","showland":true},"coloraxis":{"colorbar":{"title":{"text":"GDP per Capita"}},"colorscale":[[0.0,"#440154"],[0.1111111111111111,"#482878"],[0.2222222222222222,"#3e4989"],[0.3333333333333333,"#31688e"],[0.4444444444444444,"#26828e"],[0.5555555555555556,"#1f9e89"],[0.6666666666666666,"#35b779"],[0.7777777777777778,"#6ece58"],[0.8888888888888888,"#b5de2b"],[1.0,"#fde725"]]},"legend":{"tracegroupgap":0},"title":{"text":"GDP per cap. by country (2002)"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('3de84695-406e-4716-8a33-752321adefe6');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+<p>PART TWO: Population Bubble Map</p>
+<div id="f3c7791e" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gap <span class="op">=</span> px.data.gapminder().query(<span class="st">"year == 2002"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_geo(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    gap,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"iso_alpha"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"pop"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"continent"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>{</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pop"</span>: <span class="st">":,"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"lifeExp"</span>: <span class="st">":.1f"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"gdpPercap"</span>: <span class="st">":,.0f"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> px.scatter_geo(</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    gap,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"iso_alpha"</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"pop"</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"continent"</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>{</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pop"</span>: <span class="st">":,"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"lifeExp"</span>: <span class="st">":.1f"</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">"gdpPercap"</span>: <span class="st">":,.0f"</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    projection <span class="op">=</span> <span class="st">"orthographic"</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>fig2.show()</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co">#using the argument projection = orthographic changes the layout of the map so that it is a globe rather than a flat map, more accurate</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="ba8d6f10-b525-49ae-ae23-1f920dc4696c" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("ba8d6f10-b525-49ae-ae23-1f920dc4696c")) {                    Plotly.newPlot(                        "ba8d6f10-b525-49ae-ae23-1f920dc4696c",                        [{"customdata":{"dtype":"f8","bdata":"AAAAUAsZeEGNl24SgxBFQMZ7H1jftYZAAAAAABoIJEF7FK5H4bJSQOllFMvj2tZAAAAArOoroEGNbOf7qQFPQITF4cyPwZFAAAAAYN6naEHHSzeJQWBMQCkPHOHOAYxAAAAAoFYU00FvEoPAygFSQCi7mdGPXqhAAAAAAPvLWUFI4XoUrl9UQA+mYfhAgN1AAACAQRzSzkGNl24Sg3BPQBvXv+sTS5tAAAAAQAopqUETg8DKoSVRQABXsmPTc6ZAAAAAkHXnj0G\u002fnxov3VxRQK+UZYhhDMJAAAAAgNHjdkHazvdT44VMQAddwqG3JrFAAAAAQDYAV0EGgZVDi+xTQCMVxhZmZNVAAAAAxHtLnkEAAAAAAIBUQKCJsOEl79tAAAAAgBM\u002fVEFGtvP91NBRQC20c5rVCa5AAAAAUKwvdUHtfD81XqpQQLhZvFgIu5lAAAAA8JvfhkF7FK5H4UJTQKRTVz5\u002fyNJAAAAAgCQcQEFg5dAi2zlTQJAUkWHDJOFAAAAAACoPTEFvEoPAysFRQEDZlCv4MMJAAAAA0M2cdUGJQWDl0EJSQLpOIy1978NAAAAAAB1nREEnMQisHEJQQFxUi4h6uaBAAAAACCy+hUFOYhBYOfRNQAAAAAAAGINAAAAA0N+seEHsUbgehatOQDjXMEPThJBAAAAAALuzREExCKwcWoxSQEAwR4+1T9NAAAAACIFJokGuR+F6FM5PQKkWEcVsWaBAAAAAQJ7Jk0EIrBxaZJNRQMmSOZbXtaRAAAAAoNFdd0Hy0k1iEOhRQFBwsaKikdJAAAAAAGQDUEHhehSuR7FTQCDSb1\u002fjluFAAAAA8HyrckFcj8L1KLRRQEsjZvbBjqdAAAAAYG5ccEEIrBxaZENSQPMd\u002fMTZ9a9AAAAA8P1pdUGPwvUoXD9TQK7wLhfbsNZAAAAA4NbyjUFqvHSTGCRRQA2K5gEwGbdAAAAAzD1Kk0EMAiuHFkFSQFevIqPTkZtAAAAAAEXcSUFI4XoUrhdSQFkXt9F8o7FAAAAAkLzVcUGBlUOLbCdOQFnBb0OkdaFA","shape":"33, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Asia\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Afghanistan","Bahrain","Bangladesh","Cambodia","China","Hong Kong, China","India","Indonesia","Iran","Iraq","Israel","Japan","Jordan","Korea, Dem. Rep.","Korea, Rep.","Kuwait","Lebanon","Malaysia","Mongolia","Myanmar","Nepal","Oman","Pakistan","Philippines","Saudi Arabia","Singapore","Sri Lanka","Syria","Taiwan","Thailand","Vietnam","West Bank and Gaza","Yemen, Rep."],"legendgroup":"Asia","locations":["AFG","BHR","BGD","KHM","CHN","HKG","IND","IDN","IRN","IRQ","ISR","JPN","JOR","KOR","KOR","KWT","LBN","MYS","MNG","MMR","NPL","OMN","PAK","PHL","SAU","SGP","LKA","SYR","TWN","THA","VNM","PSE","YEM"],"marker":{"color":"#636efa","size":{"dtype":"i4","bdata":"tZCBAQ0ECgBW9RUI8z7FAIBaUUzsL2cAgzikPSCFlAyy7vwDGD1uAdkAXADx3pIHTvxQAMX6UgF+89sCSTggAFQeOADdzFkBOs4oAIHFtwL9zYoBdmcpAITAJAmQZ\u002fIEGt11AZANQADPtyoB5sYFAd+fVgHcWr4Dc4\u002fSBIq4MwDJWx0B"},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Asia","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAAJDESkGNbOf7qelSQFpiZTQ2\u002fLFAAAAAAFYVX0EfhetRuL5TQAeZZORmqN9AAAAAQCSrY0EUrkfhepRTQPYoXI94xd1AAAAAAJTHT0H2KFyPwoVSQMlaQ6n5grdAAAAAwDk6XUEpXI\u002fC9QhSQEhQ\u002fBjHEL5AAAAAAP8XUUHy0k1iELhSQOQUHckxtsZAAAAA4PSPY0FxPQrXo+BSQDyWPnQNL9FAAAAAQLmAVEHsUbgehUtTQIKo+wCgad9AAAAAwFPPU0FI4XoUrpdTQAAd5ssli9tAAAAAWBGTjEH2KFyPwuVTQJfK2xGCP9xAAAAAPEmik0F7FK5H4apTQAPso1PzVN1AAAAA4Ko5ZEGq8dJNYpBTQMGopE6Q\u002fNVAAAAAIH47Y0H2KFyPwiVSQLkZbsD3\u002fcxAAAAAAHiUEUEAAAAAACBUQMai6ezMbt5AAAAAgHmYTUEnMQisHHJTQFhWmpSho+BAAAAAuCqfi0GPwvUoXA9UQN3SakgGUNtAAAAAAMz6JUESWDm0yH5SQDQUd7wxnblAAAAAwHnAbkFSuB6F66FTQLLXuz+Yd+BAAAAAwElNUUEzMzMzM8NTQO58PzV\u002f0eVAAAAAwBVrgkF7FK5H4apSQJBmLJoeccdAAAAAYKnmY0HD9Shcj1JTQMHFihq6gNNAAAAAEM9ddUH4U+Olm9RRQOm2RC5czb5AAAAA4EhJY0EUg8DKoU1SQP5HpkMTRLxAAAAAAEGjVEEzMzMzM3NSQBfPoKFjo8pAAAAAAGmxPkEK16NwPSpTQLa5MT0BLdRAAAAAKG4lg0FSuB6F6\u002fFTQLVsrS\u002feQNhAAAAA4CcUYUHD9ShcjwJUQAY5KGFop9xAAAAAQDcVXEFI4XoUridUQCJxj6Ue1uBAAAAAADYMkEGuR+F6FLZRQK5mnfEVbLlAAAAAeIeRjEGgGi\u002fdJJ5TQB+duvK\u002fydxA","shape":"30, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Europe\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Albania","Austria","Belgium","Bosnia and Herzegovina","Bulgaria","Croatia","Czech Republic","Denmark","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Serbia","Slovak Republic","Slovenia","Spain","Sweden","Switzerland","Turkey","United Kingdom"],"legendgroup":"Europe","locations":["ALB","AUT","BEL","BIH","BGR","HRV","CZE","DNK","FIN","FRA","DEU","GRC","HUN","ISL","IRL","ITA","MNE","NLD","NOR","POL","PRT","ROU","SRB","SVK","SVN","ESP","SWE","CHE","TUR","GBR"],"marker":{"color":"#EF553B","size":{"dtype":"i4","bdata":"IIk1AFhVfAAiWZ0AKI8\u002fAOfodAD8X0QAp3+cAOUCUgBPPU8AK2KSA0+S6ARXzaEA8duZAB5lBADzMDsAV+VzA2b9CgDOA\u002fYAJzVFALhiTQJLNZ8A8dxVAUdKmgAEjVIAabEeAMWtZAI\u002foYgA3VRwAIANAwTvMJID"},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Europe","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAYHbWfUFWDi2ynb9RQFmJeVYKqLRAAAAAQLe5ZEGq8dJNYoBEQH\u002f3jhqTqqVAAAAAQHDNWkGJFtnO9zNLQJQUWACDc5VAAAAAAIvgOEH91HjpJlFHQLvtQnPNfcVAAAAAIAleZ0EzMzMzM1NJQMVW0LSUNpBAAAAAgIXIWkGuR+F6FK5HQGLIoMl05ntAAAAAgFBibkEhsHJoke1IQEpiSbkLOJ5AAAAAgEbiTkGBlUOLbKdFQCmj21yGFYdAAAAAYFPaYEEzMzMzM0NJQM0Bgjm6EJJAAAAAANy\u002fIkHpJjEIrHxPQDtzDwk\u002fz5BAAAAAYDxoikHP91PjpXtGQJnVO9xOJW5AAAAAgI1lSUFcj8L1KHxKQKsmiLofOKtAAAAAwOb\u002fbkHRItv5fmpHQIrL8Qo0w5lAAAAAAOBOG0E7tMh2vq9KQGwGuCAL0Z1AAAAAvKR6kUHdJAaBlXNRQD874LqakrJAAAAAACxAHkEGgZVDi6xIQBZqTfN+F75AAAAAQGTXUEEfhetRuJ5LQGggls3M6odAAAAAtCQzkEHNzMzMzFxJQFj+IaJtkIBAAAAAAGjTM0HFILByaGFMQPsFu2HbdMhAAAAAAGY+NkFoke18PwVNQGFA5U6vpIRAAAAA8EWZc0FEi2zn+zlNQHAZNzXwX5FAAAAAQLHMYEFKDAIrh9ZKQNRP7i2rjI1AAAAAAOtUNEGNl24Sg8BGQFMn+0Kj\u002fYFAAAAAoM3ufUHl0CLb+X5JQNLI5xUPHpRAAAAAADQ7P0GWQ4ts50tGQKOSOgG97JNAAAAAgF15RUGq8dJNYuBFQB+Zs+Pbm4BAAAAAQMJ6VEG6SQwCKy9SQI8YPbdWn8JAAAAAoLBrb0H4U+Olm6RMQOlujb4Y9YtAAAAA4K2NZkH91HjpJoFGQKQqAYxiy4RAAAAAABouZEFkEFg5tOhJQNGj8ytHu41AAAAAAB2VRUFWDi2ynR9PQHeHFAMUrJhAAAAAAE5QMkGTGARWDv1RQIDvNm\u002fonsFAAAAAcFK5fUGPwvUoXGdRQNegL739dKlAAAAAQDOecUEX2c73UwNGQGWt\u002fI3xzINAAAAAALkXPkFaZDvfT71JQLBYw0Wm0K9AAAAA4MU\u002fZUFzaJHtfD9LQBrMFZSYyIJAAAAAaDGWnEHn+6nx0k1HQPQau0QlPZlAAAAAAFq0JkFWDi2yne9SQE0VjEoqrLhAAAAAQFz0XUG+nxov3bRFQDQaCuk6jYhAAAAAACDMBEEhsHJokRVQQOnxe5teJJVAAAAAoKK7ZEHNzMzMzMxOQJEpH4KKvpdAAAAAAH1xVEGoxks3iYFEQGc7pu7q24VAAAAAgJeTXUEshxbZzvdGQM4YMJKnkItAAAAAsAYwhUEfhetRuK5KQH9rJ0ryHr5AAAAA0J+vgUGsHFpkOy9MQCgOoN+XJZ9AAAAAAB0\u002fMUGsHFpkO+9FQH\u002f4+e8dILBAAAAAmN9+gEEX2c73U9NIQAA8\u002ffuXGIxAAAAAgLj8UkEshxbZzsdMQCKunL3DsYtAAAAA4MmiYkGmm8QgsEJSQH5lpUnlWrZAAAAA0AGYd0Hy0k1iEOhHQNt6l5zE\u002fYxAAAAAYLw1ZEFkEFg5tJhDQBi\u002fKax0vpBAAAAAYIS\u002fZkE730+Nl\u002f5DQBILaxlPAIVA","shape":"52, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Africa\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Algeria","Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Dem. Rep.","Congo, Rep.","Cote d'Ivoire","Djibouti","Egypt","Equatorial Guinea","Eritrea","Ethiopia","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Libya","Madagascar","Malawi","Mali","Mauritania","Mauritius","Morocco","Mozambique","Namibia","Niger","Nigeria","Reunion","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Swaziland","Tanzania","Togo","Tunisia","Uganda","Zambia","Zimbabwe"],"legendgroup":"Africa","locations":["DZA","AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COD","COG","CIV","DJI","EGY","GNQ","ERI","ETH","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","LBY","MDG","MWI","MLI","MRT","MUS","MAR","MOZ","NAM","NER","NGA","REU","RWA","STP","SEN","SLE","SOM","ZAF","SDN","SWZ","TZA","TGO","TUN","UGA","ZMB","ZWE"],"marker":{"color":"#00cc96","size":{"dtype":"i4","bdata":"ZmfdAbrNpQDBNWsAi+AYAEnwugAWImsAhBLzAI3EPQCb0oYA7l8JAIwHTQMbyzIANv\u002f3ALjTBgAvqV4EC5AHAJFdQwAtyQwEaNMTAGY+FgBflDkBimWGAOtUFADa7N4BNDsfALvyKgAJ61EAhV37AG9ttADQcKEAOiorAE5QEgAnldsBNOMZAbkXHgAv\u002fqkAWowlBy1aCwBx0XcAhJkCABXdpQD0xVEAXk52ANYApgL68zUCHT8RAPPbDwLi8ksATxaVAB2AeQHjraEAI\u002fy1AA=="},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Africa","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAiBdHgkH2KFyPwpVSQANd+wLSLsFAAAAAwJkbYEEbL90kBvFPQPm9TX+GqqpAAAAAyItypUGq8dJNYsBRQDD84Hw2w79AAAAAwKNsfkHhehSuR\u002fFTQAt72uEeRuBAAAAAwOqObUHXo3A9CndTQHxhMlVkDcVAAAAAGOONg0HP91PjpetRQDSg3oxCe7ZAAAAAABtCTUEdWmQ734dTQPEbX3tyK75AAAAA4O5pZUEnMQisHEpTQOFfBI2lxLhAAAAAQMp\u002fYEGR7Xw\u002fNbZRQCI4LuPO07FAAAAAQDKlaEFQjZduEotSQEhwI2ULjbZAAAAAQMQ8WEHl0CLb+a5RQFhQGJSR57RAAAAAQFNSZUE830+Nlz5RQIasbvVY+rJAAAAAwFgFXUGoxks3iRFNQA71u7B12ZNAAAAAANR4WUFcj8L1KCRRQM9r7BJ1N6hAAAAAgGlUREFeukkMAgNSQPJdSl3GUrtAAAAA3OBumEF9PzVeurlSQHR7SWM4+8RAAAAAADiiU0Ev3SQGgbVRQNnQzf4YVaNAAAAAgI3RRkEhsHJoka1SQKOd0ywIvLxAAAAAwJJyVkG4HoXrUbBRQB3lYDZZj61AAAAAwIGHeUFEi2zn+3lRQIgOgSMFFbdAAAAAAEtyTUFvEoPAynFTQN8yp8vmadJAAAAAAAjQMEFYObTIdj5RQAouVtRMYsZAAAAAhpQlsUGkcD0K11NTQEp7gy8jF+NAAAAAgIaoSUHP91PjpdNSQHeKVYMAL75AAAAAYJspd0EbL90kBjFSQF6CUx+GzsBA","shape":"25, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Americas\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Argentina","Bolivia","Brazil","Canada","Chile","Colombia","Costa Rica","Cuba","Dominican Republic","Ecuador","El Salvador","Guatemala","Haiti","Honduras","Jamaica","Mexico","Nicaragua","Panama","Paraguay","Peru","Puerto Rico","Trinidad and Tobago","United States","Uruguay","Venezuela"],"legendgroup":"Americas","locations":["ARG","BOL","BRA","CAN","CHL","COL","CRI","CUB","DOM","ECU","SLV","GTM","HTI","HND","JAM","MEX","NIC","PAN","PRY","PER","PRI","TTO","USA","URY","VEN"],"marker":{"color":"#ab63fa","size":{"dtype":"i4","bdata":"8eJIAs7cgADkRbkKPMrmAVZ37ABjvHECNoQ6AHdPqwBS\u002foMAkinFABHzYACakqoAYxV0AFDjZQDTqCgAN7gbBuCITgAboy0AS8pZABx4mAGW5DoACNAQAIaUJRENUTMAtplyAQ=="},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Americas","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAgCqkckFI4XoUrhdUQNQOf03w991AAAAAgOLQTUHXo3A9CsdTQKqCUUlzpdZA","shape":"2, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Oceania\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Australia","New Zealand"],"legendgroup":"Oceania","locations":["AUS","NZL"],"marker":{"color":"#FFA15A","size":{"dtype":"i4","bdata":"qEIqAcWhOwA="},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Oceania","showlegend":true,"type":"scattergeo"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{}},"legend":{"title":{"text":"continent"},"tracegroupgap":0,"itemsizing":"constant"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('ba8d6f10-b525-49ae-ae23-1f920dc4696c');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script>if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script>window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.4.0.min.js" integrity="sha256-KEmPoupLpFyGMyGAiOsiNDbKDKAvxXAn/W+oQa0ZAfk=" crossorigin="anonymous"></script>                <div id="aa3e6599-dad2-4094-9742-35692b18c914" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("aa3e6599-dad2-4094-9742-35692b18c914")) {                    Plotly.newPlot(                        "aa3e6599-dad2-4094-9742-35692b18c914",                        [{"customdata":{"dtype":"f8","bdata":"AAAAUAsZeEGNl24SgxBFQMZ7H1jftYZAAAAAABoIJEF7FK5H4bJSQOllFMvj2tZAAAAArOoroEGNbOf7qQFPQITF4cyPwZFAAAAAYN6naEHHSzeJQWBMQCkPHOHOAYxAAAAAoFYU00FvEoPAygFSQCi7mdGPXqhAAAAAAPvLWUFI4XoUrl9UQA+mYfhAgN1AAACAQRzSzkGNl24Sg3BPQBvXv+sTS5tAAAAAQAopqUETg8DKoSVRQABXsmPTc6ZAAAAAkHXnj0G\u002fnxov3VxRQK+UZYhhDMJAAAAAgNHjdkHazvdT44VMQAddwqG3JrFAAAAAQDYAV0EGgZVDi+xTQCMVxhZmZNVAAAAAxHtLnkEAAAAAAIBUQKCJsOEl79tAAAAAgBM\u002fVEFGtvP91NBRQC20c5rVCa5AAAAAUKwvdUHtfD81XqpQQLhZvFgIu5lAAAAA8JvfhkF7FK5H4UJTQKRTVz5\u002fyNJAAAAAgCQcQEFg5dAi2zlTQJAUkWHDJOFAAAAAACoPTEFvEoPAysFRQEDZlCv4MMJAAAAA0M2cdUGJQWDl0EJSQLpOIy1978NAAAAAAB1nREEnMQisHEJQQFxUi4h6uaBAAAAACCy+hUFOYhBYOfRNQAAAAAAAGINAAAAA0N+seEHsUbgehatOQDjXMEPThJBAAAAAALuzREExCKwcWoxSQEAwR4+1T9NAAAAACIFJokGuR+F6FM5PQKkWEcVsWaBAAAAAQJ7Jk0EIrBxaZJNRQMmSOZbXtaRAAAAAoNFdd0Hy0k1iEOhRQFBwsaKikdJAAAAAAGQDUEHhehSuR7FTQCDSb1\u002fjluFAAAAA8HyrckFcj8L1KLRRQEsjZvbBjqdAAAAAYG5ccEEIrBxaZENSQPMd\u002fMTZ9a9AAAAA8P1pdUGPwvUoXD9TQK7wLhfbsNZAAAAA4NbyjUFqvHSTGCRRQA2K5gEwGbdAAAAAzD1Kk0EMAiuHFkFSQFevIqPTkZtAAAAAAEXcSUFI4XoUrhdSQFkXt9F8o7FAAAAAkLzVcUGBlUOLbCdOQFnBb0OkdaFA","shape":"33, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Asia\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Afghanistan","Bahrain","Bangladesh","Cambodia","China","Hong Kong, China","India","Indonesia","Iran","Iraq","Israel","Japan","Jordan","Korea, Dem. Rep.","Korea, Rep.","Kuwait","Lebanon","Malaysia","Mongolia","Myanmar","Nepal","Oman","Pakistan","Philippines","Saudi Arabia","Singapore","Sri Lanka","Syria","Taiwan","Thailand","Vietnam","West Bank and Gaza","Yemen, Rep."],"legendgroup":"Asia","locations":["AFG","BHR","BGD","KHM","CHN","HKG","IND","IDN","IRN","IRQ","ISR","JPN","JOR","KOR","KOR","KWT","LBN","MYS","MNG","MMR","NPL","OMN","PAK","PHL","SAU","SGP","LKA","SYR","TWN","THA","VNM","PSE","YEM"],"marker":{"color":"#636efa","size":{"dtype":"i4","bdata":"tZCBAQ0ECgBW9RUI8z7FAIBaUUzsL2cAgzikPSCFlAyy7vwDGD1uAdkAXADx3pIHTvxQAMX6UgF+89sCSTggAFQeOADdzFkBOs4oAIHFtwL9zYoBdmcpAITAJAmQZ\u002fIEGt11AZANQADPtyoB5sYFAd+fVgHcWr4Dc4\u002fSBIq4MwDJWx0B"},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Asia","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAAJDESkGNbOf7qelSQFpiZTQ2\u002fLFAAAAAAFYVX0EfhetRuL5TQAeZZORmqN9AAAAAQCSrY0EUrkfhepRTQPYoXI94xd1AAAAAAJTHT0H2KFyPwoVSQMlaQ6n5grdAAAAAwDk6XUEpXI\u002fC9QhSQEhQ\u002fBjHEL5AAAAAAP8XUUHy0k1iELhSQOQUHckxtsZAAAAA4PSPY0FxPQrXo+BSQDyWPnQNL9FAAAAAQLmAVEHsUbgehUtTQIKo+wCgad9AAAAAwFPPU0FI4XoUrpdTQAAd5ssli9tAAAAAWBGTjEH2KFyPwuVTQJfK2xGCP9xAAAAAPEmik0F7FK5H4apTQAPso1PzVN1AAAAA4Ko5ZEGq8dJNYpBTQMGopE6Q\u002fNVAAAAAIH47Y0H2KFyPwiVSQLkZbsD3\u002fcxAAAAAAHiUEUEAAAAAACBUQMai6ezMbt5AAAAAgHmYTUEnMQisHHJTQFhWmpSho+BAAAAAuCqfi0GPwvUoXA9UQN3SakgGUNtAAAAAAMz6JUESWDm0yH5SQDQUd7wxnblAAAAAwHnAbkFSuB6F66FTQLLXuz+Yd+BAAAAAwElNUUEzMzMzM8NTQO58PzV\u002f0eVAAAAAwBVrgkF7FK5H4apSQJBmLJoeccdAAAAAYKnmY0HD9Shcj1JTQMHFihq6gNNAAAAAEM9ddUH4U+Olm9RRQOm2RC5czb5AAAAA4EhJY0EUg8DKoU1SQP5HpkMTRLxAAAAAAEGjVEEzMzMzM3NSQBfPoKFjo8pAAAAAAGmxPkEK16NwPSpTQLa5MT0BLdRAAAAAKG4lg0FSuB6F6\u002fFTQLVsrS\u002feQNhAAAAA4CcUYUHD9ShcjwJUQAY5KGFop9xAAAAAQDcVXEFI4XoUridUQCJxj6Ue1uBAAAAAADYMkEGuR+F6FLZRQK5mnfEVbLlAAAAAeIeRjEGgGi\u002fdJJ5TQB+duvK\u002fydxA","shape":"30, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Europe\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Albania","Austria","Belgium","Bosnia and Herzegovina","Bulgaria","Croatia","Czech Republic","Denmark","Finland","France","Germany","Greece","Hungary","Iceland","Ireland","Italy","Montenegro","Netherlands","Norway","Poland","Portugal","Romania","Serbia","Slovak Republic","Slovenia","Spain","Sweden","Switzerland","Turkey","United Kingdom"],"legendgroup":"Europe","locations":["ALB","AUT","BEL","BIH","BGR","HRV","CZE","DNK","FIN","FRA","DEU","GRC","HUN","ISL","IRL","ITA","MNE","NLD","NOR","POL","PRT","ROU","SRB","SVK","SVN","ESP","SWE","CHE","TUR","GBR"],"marker":{"color":"#EF553B","size":{"dtype":"i4","bdata":"IIk1AFhVfAAiWZ0AKI8\u002fAOfodAD8X0QAp3+cAOUCUgBPPU8AK2KSA0+S6ARXzaEA8duZAB5lBADzMDsAV+VzA2b9CgDOA\u002fYAJzVFALhiTQJLNZ8A8dxVAUdKmgAEjVIAabEeAMWtZAI\u002foYgA3VRwAIANAwTvMJID"},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Europe","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAYHbWfUFWDi2ynb9RQFmJeVYKqLRAAAAAQLe5ZEGq8dJNYoBEQH\u002f3jhqTqqVAAAAAQHDNWkGJFtnO9zNLQJQUWACDc5VAAAAAAIvgOEH91HjpJlFHQLvtQnPNfcVAAAAAIAleZ0EzMzMzM1NJQMVW0LSUNpBAAAAAgIXIWkGuR+F6FK5HQGLIoMl05ntAAAAAgFBibkEhsHJoke1IQEpiSbkLOJ5AAAAAgEbiTkGBlUOLbKdFQCmj21yGFYdAAAAAYFPaYEEzMzMzM0NJQM0Bgjm6EJJAAAAAANy\u002fIkHpJjEIrHxPQDtzDwk\u002fz5BAAAAAYDxoikHP91PjpXtGQJnVO9xOJW5AAAAAgI1lSUFcj8L1KHxKQKsmiLofOKtAAAAAwOb\u002fbkHRItv5fmpHQIrL8Qo0w5lAAAAAAOBOG0E7tMh2vq9KQGwGuCAL0Z1AAAAAvKR6kUHdJAaBlXNRQD874LqakrJAAAAAACxAHkEGgZVDi6xIQBZqTfN+F75AAAAAQGTXUEEfhetRuJ5LQGggls3M6odAAAAAtCQzkEHNzMzMzFxJQFj+IaJtkIBAAAAAAGjTM0HFILByaGFMQPsFu2HbdMhAAAAAAGY+NkFoke18PwVNQGFA5U6vpIRAAAAA8EWZc0FEi2zn+zlNQHAZNzXwX5FAAAAAQLHMYEFKDAIrh9ZKQNRP7i2rjI1AAAAAAOtUNEGNl24Sg8BGQFMn+0Kj\u002fYFAAAAAoM3ufUHl0CLb+X5JQNLI5xUPHpRAAAAAADQ7P0GWQ4ts50tGQKOSOgG97JNAAAAAgF15RUGq8dJNYuBFQB+Zs+Pbm4BAAAAAQMJ6VEG6SQwCKy9SQI8YPbdWn8JAAAAAoLBrb0H4U+Olm6RMQOlujb4Y9YtAAAAA4K2NZkH91HjpJoFGQKQqAYxiy4RAAAAAABouZEFkEFg5tOhJQNGj8ytHu41AAAAAAB2VRUFWDi2ynR9PQHeHFAMUrJhAAAAAAE5QMkGTGARWDv1RQIDvNm\u002fonsFAAAAAcFK5fUGPwvUoXGdRQNegL739dKlAAAAAQDOecUEX2c73UwNGQGWt\u002fI3xzINAAAAAALkXPkFaZDvfT71JQLBYw0Wm0K9AAAAA4MU\u002fZUFzaJHtfD9LQBrMFZSYyIJAAAAAaDGWnEHn+6nx0k1HQPQau0QlPZlAAAAAAFq0JkFWDi2yne9SQE0VjEoqrLhAAAAAQFz0XUG+nxov3bRFQDQaCuk6jYhAAAAAACDMBEEhsHJokRVQQOnxe5teJJVAAAAAoKK7ZEHNzMzMzMxOQJEpH4KKvpdAAAAAAH1xVEGoxks3iYFEQGc7pu7q24VAAAAAgJeTXUEshxbZzvdGQM4YMJKnkItAAAAAsAYwhUEfhetRuK5KQH9rJ0ryHr5AAAAA0J+vgUGsHFpkOy9MQCgOoN+XJZ9AAAAAAB0\u002fMUGsHFpkO+9FQH\u002f4+e8dILBAAAAAmN9+gEEX2c73U9NIQAA8\u002ffuXGIxAAAAAgLj8UkEshxbZzsdMQCKunL3DsYtAAAAA4MmiYkGmm8QgsEJSQH5lpUnlWrZAAAAA0AGYd0Hy0k1iEOhHQNt6l5zE\u002fYxAAAAAYLw1ZEFkEFg5tJhDQBi\u002fKax0vpBAAAAAYIS\u002fZkE730+Nl\u002f5DQBILaxlPAIVA","shape":"52, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Africa\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Algeria","Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Dem. Rep.","Congo, Rep.","Cote d'Ivoire","Djibouti","Egypt","Equatorial Guinea","Eritrea","Ethiopia","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Libya","Madagascar","Malawi","Mali","Mauritania","Mauritius","Morocco","Mozambique","Namibia","Niger","Nigeria","Reunion","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Swaziland","Tanzania","Togo","Tunisia","Uganda","Zambia","Zimbabwe"],"legendgroup":"Africa","locations":["DZA","AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COD","COG","CIV","DJI","EGY","GNQ","ERI","ETH","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","LBY","MDG","MWI","MLI","MRT","MUS","MAR","MOZ","NAM","NER","NGA","REU","RWA","STP","SEN","SLE","SOM","ZAF","SDN","SWZ","TZA","TGO","TUN","UGA","ZMB","ZWE"],"marker":{"color":"#00cc96","size":{"dtype":"i4","bdata":"ZmfdAbrNpQDBNWsAi+AYAEnwugAWImsAhBLzAI3EPQCb0oYA7l8JAIwHTQMbyzIANv\u002f3ALjTBgAvqV4EC5AHAJFdQwAtyQwEaNMTAGY+FgBflDkBimWGAOtUFADa7N4BNDsfALvyKgAJ61EAhV37AG9ttADQcKEAOiorAE5QEgAnldsBNOMZAbkXHgAv\u002fqkAWowlBy1aCwBx0XcAhJkCABXdpQD0xVEAXk52ANYApgL68zUCHT8RAPPbDwLi8ksATxaVAB2AeQHjraEAI\u002fy1AA=="},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Africa","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAiBdHgkH2KFyPwpVSQANd+wLSLsFAAAAAwJkbYEEbL90kBvFPQPm9TX+GqqpAAAAAyItypUGq8dJNYsBRQDD84Hw2w79AAAAAwKNsfkHhehSuR\u002fFTQAt72uEeRuBAAAAAwOqObUHXo3A9CndTQHxhMlVkDcVAAAAAGOONg0HP91PjpetRQDSg3oxCe7ZAAAAAABtCTUEdWmQ734dTQPEbX3tyK75AAAAA4O5pZUEnMQisHEpTQOFfBI2lxLhAAAAAQMp\u002fYEGR7Xw\u002fNbZRQCI4LuPO07FAAAAAQDKlaEFQjZduEotSQEhwI2ULjbZAAAAAQMQ8WEHl0CLb+a5RQFhQGJSR57RAAAAAQFNSZUE830+Nlz5RQIasbvVY+rJAAAAAwFgFXUGoxks3iRFNQA71u7B12ZNAAAAAANR4WUFcj8L1KCRRQM9r7BJ1N6hAAAAAgGlUREFeukkMAgNSQPJdSl3GUrtAAAAA3OBumEF9PzVeurlSQHR7SWM4+8RAAAAAADiiU0Ev3SQGgbVRQNnQzf4YVaNAAAAAgI3RRkEhsHJoka1SQKOd0ywIvLxAAAAAwJJyVkG4HoXrUbBRQB3lYDZZj61AAAAAwIGHeUFEi2zn+3lRQIgOgSMFFbdAAAAAAEtyTUFvEoPAynFTQN8yp8vmadJAAAAAAAjQMEFYObTIdj5RQAouVtRMYsZAAAAAhpQlsUGkcD0K11NTQEp7gy8jF+NAAAAAgIaoSUHP91PjpdNSQHeKVYMAL75AAAAAYJspd0EbL90kBjFSQF6CUx+GzsBA","shape":"25, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Americas\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Argentina","Bolivia","Brazil","Canada","Chile","Colombia","Costa Rica","Cuba","Dominican Republic","Ecuador","El Salvador","Guatemala","Haiti","Honduras","Jamaica","Mexico","Nicaragua","Panama","Paraguay","Peru","Puerto Rico","Trinidad and Tobago","United States","Uruguay","Venezuela"],"legendgroup":"Americas","locations":["ARG","BOL","BRA","CAN","CHL","COL","CRI","CUB","DOM","ECU","SLV","GTM","HTI","HND","JAM","MEX","NIC","PAN","PRY","PER","PRI","TTO","USA","URY","VEN"],"marker":{"color":"#ab63fa","size":{"dtype":"i4","bdata":"8eJIAs7cgADkRbkKPMrmAVZ37ABjvHECNoQ6AHdPqwBS\u002foMAkinFABHzYACakqoAYxV0AFDjZQDTqCgAN7gbBuCITgAboy0AS8pZABx4mAGW5DoACNAQAIaUJRENUTMAtplyAQ=="},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Americas","showlegend":true,"type":"scattergeo"},{"customdata":{"dtype":"f8","bdata":"AAAAgCqkckFI4XoUrhdUQNQOf03w991AAAAAgOLQTUHXo3A9CsdTQKqCUUlzpdZA","shape":"2, 3"},"geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003econtinent=Oceania\u003cbr\u003epop=%{customdata[0]:,}\u003cbr\u003eiso_alpha=%{location}\u003cbr\u003elifeExp=%{customdata[1]:.1f}\u003cbr\u003egdpPercap=%{customdata[2]:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Australia","New Zealand"],"legendgroup":"Oceania","locations":["AUS","NZL"],"marker":{"color":"#FFA15A","size":{"dtype":"i4","bdata":"qEIqAcWhOwA="},"sizemode":"area","sizeref":3201000.0,"symbol":"circle"},"mode":"markers","name":"Oceania","showlegend":true,"type":"scattergeo"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"projection":{"type":"orthographic"},"center":{}},"legend":{"title":{"text":"continent"},"tracegroupgap":0,"itemsizing":"constant"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('aa3e6599-dad2-4094-9742-35692b18c914');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

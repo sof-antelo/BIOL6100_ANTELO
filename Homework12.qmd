@@ -13,6 +13,7 @@ PART 1: Choropleth map of GDP in Europe
 ```{python}
 from bokeh.palettes import viridis
 import json 
+from networkx.algorithms.bipartite import projection
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -52,22 +53,35 @@ PART TWO: Population Bubble Map
 
 
 ```{python}
-gap
+gap = px.data.gapminder().query("year == 2002")
 fig = px.scatter_geo(
     gap,
-    locations = "iso_alpha",
-    color = "continent",
-    hover_name = "country",
-    hover_data{
-        "pop":":,",
-        "lifeExp":":,.0f",
-        "iso_alpha":False,
-        "continent":False
-    },
-    size = "pop",
-    projection = "natural earth"
+    locations="iso_alpha",
+    size="pop",
+    color="continent",
+    hover_name="country",
+    hover_data={
+        "pop": ":,",
+        "lifeExp": ":.1f",
+        "gdpPercap": ":,.0f",
+    }
 )
-fig.show()
 
-fig.update(projection)
+fig.show()
+fig2 = px.scatter_geo(
+    gap,
+    locations="iso_alpha",
+    size="pop",
+    color="continent",
+    hover_name="country",
+    hover_data={
+        "pop": ":,",
+        "lifeExp": ":.1f",
+        "gdpPercap": ":,.0f",
+    },
+    projection = "orthographic"
+)
+fig2.show()
+#using the argument projection = orthographic changes the layout of the map so that it is a globe rather than a flat map, more accurate
+ 
 ```

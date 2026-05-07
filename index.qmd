@@ -38,4 +38,10 @@ print(x)
 -------
 [Homework 10](homework10.html)
 -------
-[link to homework 11 repo:](https://github.com/sof-antelo/BIOL6100_ANTELO/CA_SIR_6100)
+[link to homework 11 repo:](https://github.com/sof-antelo/BIOL6100_ANTELO/tree/9825dbe34b32dc13ac4bd98b0cc415fbfb2d9934/CA_SIR_6100)
+-------
+[Homework 12](Homework12.html)
+-------
+[Homework 13](Homework13.html)
+-------
+[Homework 14](Homework14.html)
